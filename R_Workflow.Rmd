@@ -42,7 +42,7 @@ R is a statistical programming languate and environment and free, open source an
 
 This script will work with example data for
 
-(A) Growth data
+**(A) Growth data**
 
 - The file **Growth_Data.txt** contains measurements for root length and shoot weight of Arabidopsis under different growth conditions. Plants were grown under normal phosphorus and low P conditions. Next to control (MgCL) treatments plants were also inoculated with different strains of rhizobia to test their effect on plant growth and whether that effect depends on nutrient status. For simplicity only 1 biological experiment with 7-10 individual measurements per treatment is included.
 
@@ -57,33 +57,38 @@ kable(growth_data) %>%
 
 ```
 
-(B) Basic genome stats
+**(B) Basic genome stats**
 
 - **GenomeInfo.txt** includes basic genome stats to summarize genome characteristics for 12 genomes. The file contains information for each protein that was annotated, such as the prokka annotation, on which contig it was found, how long that contig is, to what genome the contig belongs and the GC content of that bin. We stored a lot of information in that one file but we can then see different ways to parse our data.
 
 Notice, the layout for these file is generally useful and one can easily imagine growth data in the same format (and can run the code very similar as the examples given here). For this script we will only play with the first dataset but the second can be run for testing.
 
 
-(C) Annotation data
+**(C) Annotation data**
 
 This file is specific to the output of the Spang_team annotation pipeline but this workflow can be used for any type of categorical data one wants to summarize
 
-- **UAP2_Annotation_table_u.txt** includes annotations for a set of 46 DPANN genomes. This includes annotations across several databases (arCOG, KO, PFAM, ...) for each individual protein found across all these 46 genomes. Specifically, we want to learn how to:
-  --> Make a count table for each genome
-  --> make  a count table for clusters of interest 
-  --> make a heatmap for genes of interest
-  --> merge our results with some pre-sorted tables
+- **UAP2_Annotation_table_u.txt** includes annotations for a set of 46 DPANN genomes. This includes annotations across several databases (arCOG, KO, PFAM, ...) for each individual protein found across all these 46 genomes. 
+
+Specifically, we want to learn how to:
+
+- Make a count table for each genome
+- make  a count table for clusters of interest 
+- make a heatmap for genes of interest
+- merge our results with some pre-sorted tables
 
 For this to work we have some additional files to make our job easier:
-  --> **mapping.txt** =  a list that defines to what cluster (i.e. grouping based on a phylogenetic tree) or bins belong to
-  --> **Genes_of_interest** = a list of genes we are interested in and that we want to plot in a heatmap
-  --> **ar14_arCOGdef19.txt** = metadata for the arCOG annotations
-  --> **Metabolism_Table_KO_Apr2020.txt** = metadata for KOs and sorted by pathways
+
+- **mapping.txt** =  a list that defines to what cluster (i.e. grouping based on a phylogenetic tree) or bins belong to
+- **Genes_of_interest** = a list of genes we are interested in and that we want to plot in a heatmap
+- **ar14_arCOGdef19.txt** = metadata for the arCOG annotations
+- **Metabolism_Table_KO_Apr2020.txt** = metadata for KOs and sorted by pathways
 
 
 **Since R is in active development = write down what version you are using for your manuscripts and ideal provide the session info as a readme**
 
-Throughout this text Comments in R are preceeded by a #. Whenever this key is encountered, everything printed after it will be ignored. T
+Throughout this text Comments in R are preceeded by a **#**. 
+Whenever this key is encountered, everything printed after it will be ignored. 
 Therefore, this is a good way for us to comment code.
 
 
