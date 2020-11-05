@@ -1,4 +1,4 @@
-SampleID	Nutrient	Condition	FW_shoot_mg 	Rootlength_cm
+SampleID	Nutrient	Condition	FW_shoot_mg 	Rootlength
 noP	noP	MgCl	10.26	5.931015152
 noP	noP	MgCl	6.52	5.74344697
 noP	noP	MgCl	12.17	6.834719697

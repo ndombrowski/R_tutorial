@@ -1,0 +1,628 @@
+SampleID	Nutrient	Condition	Timepoint	Rootlength
+P_MgCl_t0	P	MgCl	t0	1.542
+P_MgCl_t0	P	MgCl	t0	1.849
+P_MgCl_t0	P	MgCl	t0	1.209
+P_MgCl_t0	P	MgCl	t0	1.834
+P_MgCl_t0	P	MgCl	t0	1.586
+P_MgCl_t0	P	MgCl	t0	1.683
+P_MgCl_t0	P	MgCl	t0	1.608
+P_MgCl_t0	P	MgCl	t0	1.8
+P_MgCl_t0	P	MgCl	t0	1.63
+P_MgCl_t0	P	MgCl	t0	1.125
+P_MgCl_t0	P	MgCl	t0	1.865
+P_MgCl_t0	P	MgCl	t0	1.633
+P_MgCl_t0	P	MgCl	t0	1.624
+P_MgCl_t0	P	MgCl	t0	1.491
+P_MgCl_t0	P	MgCl	t0	1.315
+P_MgCl_t0	P	MgCl	t0	1.872
+P_MgCl_t0	P	MgCl	t0	1.319
+P_MgCl_t0	P	MgCl	t0	2.496
+P_MgCl_t0	P	MgCl	t0	1.328
+P_MgCl_t0	P	MgCl	t0	1.459
+P_MgCl_t0	P	MgCl	t0	1.184
+P_MgCl_t0	P	MgCl	t0	1.758
+P_MgCl_t0	P	MgCl	t0	1.951
+P_MgCl_t0	P	MgCl	t0	1.765
+P_MgCl_t0	P	MgCl	t0	1.569
+P_MgCl_t0	P	MgCl	t0	1.679
+P_MgCl_t0	P	MgCl	t0	1.745
+P_MgCl_t0	P	MgCl	t0	1.256
+P_MgCl_t0	P	MgCl	t0	
+P_MgCl_t0	P	MgCl	t0	
+noP_MgCl_t0	noP	MgCl	t0	1.448
+noP_MgCl_t0	noP	MgCl	t0	1.399
+noP_MgCl_t0	noP	MgCl	t0	1.67
+noP_MgCl_t0	noP	MgCl	t0	1.42
+noP_MgCl_t0	noP	MgCl	t0	1.12
+noP_MgCl_t0	noP	MgCl	t0	1.312
+noP_MgCl_t0	noP	MgCl	t0	1.586
+noP_MgCl_t0	noP	MgCl	t0	1.485
+noP_MgCl_t0	noP	MgCl	t0	1.367
+noP_MgCl_t0	noP	MgCl	t0	1.627
+noP_MgCl_t0	noP	MgCl	t0	1.573
+noP_MgCl_t0	noP	MgCl	t0	1.555
+noP_MgCl_t0	noP	MgCl	t0	1.535
+noP_MgCl_t0	noP	MgCl	t0	1.72
+noP_MgCl_t0	noP	MgCl	t0	1.609
+noP_MgCl_t0	noP	MgCl	t0	1.439
+noP_MgCl_t0	noP	MgCl	t0	1.679
+noP_MgCl_t0	noP	MgCl	t0	1.333
+noP_MgCl_t0	noP	MgCl	t0	1.77
+noP_MgCl_t0	noP	MgCl	t0	1.74
+noP_MgCl_t0	noP	MgCl	t0	1.834
+noP_MgCl_t0	noP	MgCl	t0	1.663
+noP_MgCl_t0	noP	MgCl	t0	1.83
+noP_MgCl_t0	noP	MgCl	t0	1.925
+noP_MgCl_t0	noP	MgCl	t0	1.735
+noP_MgCl_t0	noP	MgCl	t0	1.422
+noP_MgCl_t0	noP	MgCl	t0	1.862
+noP_MgCl_t0	noP	MgCl	t0	1.845
+noP_MgCl_t0	noP	MgCl	t0	1.711
+noP_MgCl_t0	noP	MgCl	t0	1.469
+P_350_t0	P	350	t0	1.124
+P_350_t0	P	350	t0	1.606
+P_350_t0	P	350	t0	1.519
+P_350_t0	P	350	t0	1.253
+P_350_t0	P	350	t0	1.19
+P_350_t0	P	350	t0	2.053
+P_350_t0	P	350	t0	1.677
+P_350_t0	P	350	t0	1.505
+P_350_t0	P	350	t0	1.178
+P_350_t0	P	350	t0	1.873
+P_350_t0	P	350	t0	1.453
+P_350_t0	P	350	t0	1.523
+P_350_t0	P	350	t0	1.803
+P_350_t0	P	350	t0	1.465
+P_350_t0	P	350	t0	1.59
+P_350_t0	P	350	t0	1.471
+P_350_t0	P	350	t0	1.614
+P_350_t0	P	350	t0	1.727
+P_350_t0	P	350	t0	1.47
+P_350_t0	P	350	t0	1.708
+P_350_t0	P	350	t0	1.709
+P_350_t0	P	350	t0	1.387
+P_350_t0	P	350	t0	1.639
+P_350_t0	P	350	t0	1.825
+P_350_t0	P	350	t0	1.277
+P_350_t0	P	350	t0	1.054
+P_350_t0	P	350	t0	1.876
+P_350_t0	P	350	t0	1.246
+P_350_t0	P	350	t0	1.617
+P_350_t0	P	350	t0	1.214
+noP_350_t0	noP	350	t0	1.754
+noP_350_t0	noP	350	t0	1.997
+noP_350_t0	noP	350	t0	1.678
+noP_350_t0	noP	350	t0	1.412
+noP_350_t0	noP	350	t0	1.15
+noP_350_t0	noP	350	t0	1.257
+noP_350_t0	noP	350	t0	1.517
+noP_350_t0	noP	350	t0	1.491
+noP_350_t0	noP	350	t0	1.299
+noP_350_t0	noP	350	t0	1.512
+noP_350_t0	noP	350	t0	1.752
+noP_350_t0	noP	350	t0	1.376
+noP_350_t0	noP	350	t0	2.107
+noP_350_t0	noP	350	t0	1.492
+noP_350_t0	noP	350	t0	1.582
+noP_350_t0	noP	350	t0	1.552
+noP_350_t0	noP	350	t0	1.579
+noP_350_t0	noP	350	t0	1.366
+noP_350_t0	noP	350	t0	1.807
+noP_350_t0	noP	350	t0	1.497
+noP_350_t0	noP	350	t0	1.348
+noP_350_t0	noP	350	t0	1.438
+noP_350_t0	noP	350	t0	1.453
+noP_350_t0	noP	350	t0	1.42
+noP_350_t0	noP	350	t0	1.141
+noP_350_t0	noP	350	t0	1.719
+noP_350_t0	noP	350	t0	1.751
+noP_350_t0	noP	350	t0	1.119
+noP_350_t0	noP	350	t0	1.777
+noP_350_t0	noP	350	t0	1.651
+P_MgCl_t1	P	MgCl	t1	2.52
+P_MgCl_t1	P	MgCl	t1	2.892
+P_MgCl_t1	P	MgCl	t1	2.457
+P_MgCl_t1	P	MgCl	t1	2.426
+P_MgCl_t1	P	MgCl	t1	2.226
+P_MgCl_t1	P	MgCl	t1	2.203
+P_MgCl_t1	P	MgCl	t1	2.055
+P_MgCl_t1	P	MgCl	t1	2.889
+P_MgCl_t1	P	MgCl	t1	3.253
+P_MgCl_t1	P	MgCl	t1	2.437
+P_MgCl_t1	P	MgCl	t1	2.283
+P_MgCl_t1	P	MgCl	t1	2.038
+P_MgCl_t1	P	MgCl	t1	1.572
+P_MgCl_t1	P	MgCl	t1	1.636
+P_MgCl_t1	P	MgCl	t1	2.611
+P_MgCl_t1	P	MgCl	t1	1.983
+P_MgCl_t1	P	MgCl	t1	1.808
+P_MgCl_t1	P	MgCl	t1	2.549
+P_MgCl_t1	P	MgCl	t1	1.957
+P_MgCl_t1	P	MgCl	t1	2.211
+P_MgCl_t1	P	MgCl	t1	2.885
+P_MgCl_t1	P	MgCl	t1	2.22
+P_MgCl_t1	P	MgCl	t1	2.548
+P_MgCl_t1	P	MgCl	t1	2.622
+P_MgCl_t1	P	MgCl	t1	2.202
+P_MgCl_t1	P	MgCl	t1	1.551
+P_MgCl_t1	P	MgCl	t1	2.605
+P_MgCl_t1	P	MgCl	t1	2.321
+P_MgCl_t1	P	MgCl	t1	2.45
+P_MgCl_t1	P	MgCl	t1	1.974
+noP_MgCl_t1	noP	MgCl	t1	2.759
+noP_MgCl_t1	noP	MgCl	t1	2.474
+noP_MgCl_t1	noP	MgCl	t1	1.696
+noP_MgCl_t1	noP	MgCl	t1	2.341
+noP_MgCl_t1	noP	MgCl	t1	1.834
+noP_MgCl_t1	noP	MgCl	t1	1.409
+noP_MgCl_t1	noP	MgCl	t1	2.671
+noP_MgCl_t1	noP	MgCl	t1	2.85
+noP_MgCl_t1	noP	MgCl	t1	1.684
+noP_MgCl_t1	noP	MgCl	t1	2.437
+noP_MgCl_t1	noP	MgCl	t1	1.675
+noP_MgCl_t1	noP	MgCl	t1	1.686
+noP_MgCl_t1	noP	MgCl	t1	1.87
+noP_MgCl_t1	noP	MgCl	t1	2.121
+noP_MgCl_t1	noP	MgCl	t1	2.503
+noP_MgCl_t1	noP	MgCl	t1	2.001
+noP_MgCl_t1	noP	MgCl	t1	2.352
+noP_MgCl_t1	noP	MgCl	t1	2.877
+noP_MgCl_t1	noP	MgCl	t1	1.813
+noP_MgCl_t1	noP	MgCl	t1	1.996
+noP_MgCl_t1	noP	MgCl	t1	2.619
+noP_MgCl_t1	noP	MgCl	t1	2.414
+noP_MgCl_t1	noP	MgCl	t1	1.522
+noP_MgCl_t1	noP	MgCl	t1	1.802
+noP_MgCl_t1	noP	MgCl	t1	2.442
+noP_MgCl_t1	noP	MgCl	t1	2.337
+noP_MgCl_t1	noP	MgCl	t1	1.88
+noP_MgCl_t1	noP	MgCl	t1	2.012
+noP_MgCl_t1	noP	MgCl	t1	1.808
+noP_MgCl_t1	noP	MgCl	t1	1.84
+P_350_t1	P	350	t1	3.42
+P_350_t1	P	350	t1	1.881
+P_350_t1	P	350	t1	1.802
+P_350_t1	P	350	t1	2.013
+P_350_t1	P	350	t1	2.196
+P_350_t1	P	350	t1	2.976
+P_350_t1	P	350	t1	2.617
+P_350_t1	P	350	t1	2.737
+P_350_t1	P	350	t1	2.034
+P_350_t1	P	350	t1	2.27
+P_350_t1	P	350	t1	1.611
+P_350_t1	P	350	t1	2.35
+P_350_t1	P	350	t1	2.97
+P_350_t1	P	350	t1	2.856
+P_350_t1	P	350	t1	3.054
+P_350_t1	P	350	t1	2.283
+P_350_t1	P	350	t1	2.695
+P_350_t1	P	350	t1	3.417
+P_350_t1	P	350	t1	3.006
+P_350_t1	P	350	t1	2.049
+P_350_t1	P	350	t1	2.108
+P_350_t1	P	350	t1	1.423
+P_350_t1	P	350	t1	2.223
+P_350_t1	P	350	t1	1.875
+P_350_t1	P	350	t1	2.284
+P_350_t1	P	350	t1	2.212
+P_350_t1	P	350	t1	1.86
+P_350_t1	P	350	t1	1.589
+P_350_t1	P	350	t1	1.141
+P_350_t1	P	350	t1	2.898
+noP_350_t1	noP	350	t1	2.116
+noP_350_t1	noP	350	t1	2.069
+noP_350_t1	noP	350	t1	2.277
+noP_350_t1	noP	350	t1	2.019
+noP_350_t1	noP	350	t1	2.397
+noP_350_t1	noP	350	t1	2.279
+noP_350_t1	noP	350	t1	2.087
+noP_350_t1	noP	350	t1	2.173
+noP_350_t1	noP	350	t1	1.44
+noP_350_t1	noP	350	t1	2.094
+noP_350_t1	noP	350	t1	1.724
+noP_350_t1	noP	350	t1	1.788
+noP_350_t1	noP	350	t1	2.176
+noP_350_t1	noP	350	t1	1.397
+noP_350_t1	noP	350	t1	1.863
+noP_350_t1	noP	350	t1	1.925
+noP_350_t1	noP	350	t1	2.726
+noP_350_t1	noP	350	t1	2.474
+noP_350_t1	noP	350	t1	1.842
+noP_350_t1	noP	350	t1	2.137
+noP_350_t1	noP	350	t1	2.253
+noP_350_t1	noP	350	t1	1.618
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+noP_350_t1	noP	350	t1	
+P_MgCl_t2	P	MgCl	t2	3.847
+P_MgCl_t2	P	MgCl	t2	4.412
+P_MgCl_t2	P	MgCl	t2	3.116
+P_MgCl_t2	P	MgCl	t2	2.403
+P_MgCl_t2	P	MgCl	t2	2.213
+P_MgCl_t2	P	MgCl	t2	3.48
+P_MgCl_t2	P	MgCl	t2	4.014
+P_MgCl_t2	P	MgCl	t2	3.007
+P_MgCl_t2	P	MgCl	t2	3.26
+P_MgCl_t2	P	MgCl	t2	2.797
+P_MgCl_t2	P	MgCl	t2	3.64
+P_MgCl_t2	P	MgCl	t2	2.268
+P_MgCl_t2	P	MgCl	t2	3.587
+P_MgCl_t2	P	MgCl	t2	2.642
+P_MgCl_t2	P	MgCl	t2	3.277
+P_MgCl_t2	P	MgCl	t2	3.629
+P_MgCl_t2	P	MgCl	t2	4.342
+P_MgCl_t2	P	MgCl	t2	3.037
+P_MgCl_t2	P	MgCl	t2	3.218
+P_MgCl_t2	P	MgCl	t2	3.886
+P_MgCl_t2	P	MgCl	t2	4.082
+P_MgCl_t2	P	MgCl	t2	2.9
+P_MgCl_t2	P	MgCl	t2	3.861
+P_MgCl_t2	P	MgCl	t2	4.215
+P_MgCl_t2	P	MgCl	t2	4.702
+P_MgCl_t2	P	MgCl	t2	4.178
+P_MgCl_t2	P	MgCl	t2	3.433
+P_MgCl_t2	P	MgCl	t2	
+P_MgCl_t2	P	MgCl	t2	
+P_MgCl_t2	P	MgCl	t2	
+noP_MgCl_t2	noP	MgCl	t2	2.245
+noP_MgCl_t2	noP	MgCl	t2	2.917
+noP_MgCl_t2	noP	MgCl	t2	3.507
+noP_MgCl_t2	noP	MgCl	t2	2.357
+noP_MgCl_t2	noP	MgCl	t2	3.784
+noP_MgCl_t2	noP	MgCl	t2	2.015
+noP_MgCl_t2	noP	MgCl	t2	2.432
+noP_MgCl_t2	noP	MgCl	t2	3.629
+noP_MgCl_t2	noP	MgCl	t2	3.804
+noP_MgCl_t2	noP	MgCl	t2	2.243
+noP_MgCl_t2	noP	MgCl	t2	3.877
+noP_MgCl_t2	noP	MgCl	t2	4.061
+noP_MgCl_t2	noP	MgCl	t2	4.216
+noP_MgCl_t2	noP	MgCl	t2	4.394
+noP_MgCl_t2	noP	MgCl	t2	3.958
+noP_MgCl_t2	noP	MgCl	t2	3.958
+noP_MgCl_t2	noP	MgCl	t2	3.704
+noP_MgCl_t2	noP	MgCl	t2	3.414
+noP_MgCl_t2	noP	MgCl	t2	3.452
+noP_MgCl_t2	noP	MgCl	t2	3.634
+noP_MgCl_t2	noP	MgCl	t2	3.437
+noP_MgCl_t2	noP	MgCl	t2	2.952
+noP_MgCl_t2	noP	MgCl	t2	3.186
+noP_MgCl_t2	noP	MgCl	t2	2.347
+noP_MgCl_t2	noP	MgCl	t2	4.029
+noP_MgCl_t2	noP	MgCl	t2	4.285
+noP_MgCl_t2	noP	MgCl	t2	3.604
+noP_MgCl_t2	noP	MgCl	t2	3.694
+noP_MgCl_t2	noP	MgCl	t2	3.588
+noP_MgCl_t2	noP	MgCl	t2	2.461
+P_350_t2	P	350	t2	3.315
+P_350_t2	P	350	t2	4.109
+P_350_t2	P	350	t2	4.485
+P_350_t2	P	350	t2	2.718
+P_350_t2	P	350	t2	3.96
+P_350_t2	P	350	t2	4.569
+P_350_t2	P	350	t2	4.73
+P_350_t2	P	350	t2	4.423
+P_350_t2	P	350	t2	3.781
+P_350_t2	P	350	t2	3.141
+P_350_t2	P	350	t2	3.044
+P_350_t2	P	350	t2	3.51
+P_350_t2	P	350	t2	4.317
+P_350_t2	P	350	t2	3.315
+P_350_t2	P	350	t2	4.804
+P_350_t2	P	350	t2	3.112
+P_350_t2	P	350	t2	4.236
+P_350_t2	P	350	t2	2.62
+P_350_t2	P	350	t2	3.02
+P_350_t2	P	350	t2	4.574
+P_350_t2	P	350	t2	5.429
+P_350_t2	P	350	t2	5.429
+P_350_t2	P	350	t2	3.921
+P_350_t2	P	350	t2	3.268
+P_350_t2	P	350	t2	3.409
+P_350_t2	P	350	t2	3.771
+P_350_t2	P	350	t2	3.942
+P_350_t2	P	350	t2	2.5
+P_350_t2	P	350	t2	4.243
+P_350_t2	P	350	t2	
+noP_350_t2	noP	350	t2	2.782
+noP_350_t2	noP	350	t2	3.398
+noP_350_t2	noP	350	t2	2.227
+noP_350_t2	noP	350	t2	3.454
+noP_350_t2	noP	350	t2	2.305
+noP_350_t2	noP	350	t2	2.631
+noP_350_t2	noP	350	t2	3.08
+noP_350_t2	noP	350	t2	2.979
+noP_350_t2	noP	350	t2	4.051
+noP_350_t2	noP	350	t2	2.612
+noP_350_t2	noP	350	t2	3.232
+noP_350_t2	noP	350	t2	3.695
+noP_350_t2	noP	350	t2	4.08
+noP_350_t2	noP	350	t2	2.653
+noP_350_t2	noP	350	t2	3.695
+noP_350_t2	noP	350	t2	3.718
+noP_350_t2	noP	350	t2	2.042
+noP_350_t2	noP	350	t2	4.527
+noP_350_t2	noP	350	t2	4.242
+noP_350_t2	noP	350	t2	3.427
+noP_350_t2	noP	350	t2	2.43
+noP_350_t2	noP	350	t2	3.517
+noP_350_t2	noP	350	t2	2.995
+noP_350_t2	noP	350	t2	3.868
+noP_350_t2	noP	350	t2	2.892
+noP_350_t2	noP	350	t2	4.28
+noP_350_t2	noP	350	t2	4.352
+noP_350_t2	noP	350	t2	2.295
+noP_350_t2	noP	350	t2	3.263
+noP_350_t2	noP	350	t2	
+P_MgCl_t3	P	MgCl	t3	5.126
+P_MgCl_t3	P	MgCl	t3	4.331
+P_MgCl_t3	P	MgCl	t3	5.302
+P_MgCl_t3	P	MgCl	t3	6.897
+P_MgCl_t3	P	MgCl	t3	6.372
+P_MgCl_t3	P	MgCl	t3	5.875
+P_MgCl_t3	P	MgCl	t3	7.155
+P_MgCl_t3	P	MgCl	t3	6.974
+P_MgCl_t3	P	MgCl	t3	5.914
+P_MgCl_t3	P	MgCl	t3	6.464
+P_MgCl_t3	P	MgCl	t3	5.608
+P_MgCl_t3	P	MgCl	t3	6.232
+P_MgCl_t3	P	MgCl	t3	3.467
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+P_MgCl_t3	P	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	3.485
+noP_MgCl_t3	noP	MgCl	t3	3.235
+noP_MgCl_t3	noP	MgCl	t3	4.622
+noP_MgCl_t3	noP	MgCl	t3	2.487
+noP_MgCl_t3	noP	MgCl	t3	4.42
+noP_MgCl_t3	noP	MgCl	t3	4.48
+noP_MgCl_t3	noP	MgCl	t3	2.832
+noP_MgCl_t3	noP	MgCl	t3	4.318
+noP_MgCl_t3	noP	MgCl	t3	4.651
+noP_MgCl_t3	noP	MgCl	t3	3.46
+noP_MgCl_t3	noP	MgCl	t3	5.41
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+noP_MgCl_t3	noP	MgCl	t3	
+P_350_t3	P	350	t3	3.705
+P_350_t3	P	350	t3	3.466
+P_350_t3	P	350	t3	6.598
+P_350_t3	P	350	t3	6.16
+P_350_t3	P	350	t3	6
+P_350_t3	P	350	t3	6.092
+P_350_t3	P	350	t3	6.057
+P_350_t3	P	350	t3	7.018
+P_350_t3	P	350	t3	6.48
+P_350_t3	P	350	t3	6.369
+P_350_t3	P	350	t3	6.119
+P_350_t3	P	350	t3	5.733
+P_350_t3	P	350	t3	6.213
+P_350_t3	P	350	t3	5.65
+P_350_t3	P	350	t3	6.322
+P_350_t3	P	350	t3	6.57
+P_350_t3	P	350	t3	4.98
+P_350_t3	P	350	t3	3.664
+P_350_t3	P	350	t3	4.473
+P_350_t3	P	350	t3	5.995
+P_350_t3	P	350	t3	6.055
+P_350_t3	P	350	t3	5.717
+P_350_t3	P	350	t3	6.073
+P_350_t3	P	350	t3	
+P_350_t3	P	350	t3	
+P_350_t3	P	350	t3	
+P_350_t3	P	350	t3	
+P_350_t3	P	350	t3	
+P_350_t3	P	350	t3	
+P_350_t3	P	350	t3	
+noP_350_t3	noP	350	t3	5.488
+noP_350_t3	noP	350	t3	3.907
+noP_350_t3	noP	350	t3	5.026
+noP_350_t3	noP	350	t3	5.076
+noP_350_t3	noP	350	t3	5.12
+noP_350_t3	noP	350	t3	4.48
+noP_350_t3	noP	350	t3	4.463
+noP_350_t3	noP	350	t3	4.983
+noP_350_t3	noP	350	t3	3.026
+noP_350_t3	noP	350	t3	5.438
+noP_350_t3	noP	350	t3	2.939
+noP_350_t3	noP	350	t3	4.854
+noP_350_t3	noP	350	t3	6.406
+noP_350_t3	noP	350	t3	5.11
+noP_350_t3	noP	350	t3	5.39
+noP_350_t3	noP	350	t3	4.487
+noP_350_t3	noP	350	t3	4.832
+noP_350_t3	noP	350	t3	5.88
+noP_350_t3	noP	350	t3	6.833
+noP_350_t3	noP	350	t3	6.986
+noP_350_t3	noP	350	t3	5.81
+noP_350_t3	noP	350	t3	5.927
+noP_350_t3	noP	350	t3	5.332
+noP_350_t3	noP	350	t3	5.086
+noP_350_t3	noP	350	t3	
+noP_350_t3	noP	350	t3	
+noP_350_t3	noP	350	t3	
+noP_350_t3	noP	350	t3	
+noP_350_t3	noP	350	t3	
+noP_350_t3	noP	350	t3	
+P_MgCl_t4	P	MgCl	t4	6.799
+P_MgCl_t4	P	MgCl	t4	8.322
+P_MgCl_t4	P	MgCl	t4	5.396
+P_MgCl_t4	P	MgCl	t4	7.245
+P_MgCl_t4	P	MgCl	t4	8.419
+P_MgCl_t4	P	MgCl	t4	7.742
+P_MgCl_t4	P	MgCl	t4	6.163
+P_MgCl_t4	P	MgCl	t4	9.466
+P_MgCl_t4	P	MgCl	t4	8.769
+P_MgCl_t4	P	MgCl	t4	8.61
+P_MgCl_t4	P	MgCl	t4	7.154
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+P_MgCl_t4	P	MgCl	t4	
+noP_MgCl_t4	noP	MgCl	t4	4.769
+noP_MgCl_t4	noP	MgCl	t4	4.566
+noP_MgCl_t4	noP	MgCl	t4	7.044
+noP_MgCl_t4	noP	MgCl	t4	4.988
+noP_MgCl_t4	noP	MgCl	t4	5.266
+noP_MgCl_t4	noP	MgCl	t4	5.437
+noP_MgCl_t4	noP	MgCl	t4	5.649
+noP_MgCl_t4	noP	MgCl	t4	6.099
+noP_MgCl_t4	noP	MgCl	t4	6.333
+noP_MgCl_t4	noP	MgCl	t4	6.368
+noP_MgCl_t4	noP	MgCl	t4	3.765
+noP_MgCl_t4	noP	MgCl	t4	7.648
+noP_MgCl_t4	noP	MgCl	t4	6.798
+noP_MgCl_t4	noP	MgCl	t4	5.994
+noP_MgCl_t4	noP	MgCl	t4	
+noP_MgCl_t4	noP	MgCl	t4	
+noP_MgCl_t4	noP	MgCl	t4	
+noP_MgCl_t4	noP	MgCl	t4	
+noP_MgCl_t4	noP	MgCl	t4	
+noP_MgCl_t4	noP	MgCl	t4	
+P_350_t4	P	350	t4	8.499
+P_350_t4	P	350	t4	7.294
+P_350_t4	P	350	t4	9.705
+P_350_t4	P	350	t4	9.997
+P_350_t4	P	350	t4	9.159
+P_350_t4	P	350	t4	6.917
+P_350_t4	P	350	t4	9.852
+P_350_t4	P	350	t4	10.88
+P_350_t4	P	350	t4	9.201
+P_350_t4	P	350	t4	9.574
+P_350_t4	P	350	t4	10.867
+P_350_t4	P	350	t4	10.708
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+P_350_t4	P	350	t4	
+noP_350_t4	noP	350	t4	5.734
+noP_350_t4	noP	350	t4	6.164
+noP_350_t4	noP	350	t4	7.92
+noP_350_t4	noP	350	t4	6.541
+noP_350_t4	noP	350	t4	6.441
+noP_350_t4	noP	350	t4	7.513
+noP_350_t4	noP	350	t4	5.896
+noP_350_t4	noP	350	t4	7.696
+noP_350_t4	noP	350	t4	5.58
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t4	noP	350	t4	
+noP_350_t5	noP	350	t5	9.334902439
+noP_350_t5	noP	350	t5	8.703707317
+noP_350_t5	noP	350	t5	8.838373984
+noP_350_t5	noP	350	t5	6.43895935
+noP_350_t5	noP	350	t5	7.885772358
+noP_350_t5	noP	350	t5	9.436785714
+noP_350_t5	noP	350	t5	8.792293651
+noP_350_t5	noP	350	t5	9.088357143
+noP_350_t5	noP	350	t5	6.271626984
+noP_350_t5	noP	350	t5	7.211944444
+noP_350_t5	noP	350	t5	8.781166667
+noP_350_t5	noP	350	t5	9.326468254
+noP_350_t5	noP	350	t5	6.65765873
+noP_350_t5	noP	350	t5	
+noP_350_t5	noP	350	t5	
+noP_350_t5	noP	350	t5	9.507481481
+noP_350_t5	noP	350	t5	9.208348148
+noP_350_t5	noP	350	t5	8.223933333
+noP_350_t5	noP	350	t5	8.221288889
+noP_350_t5	noP	350	t5	8.699911111
+noP_350_t5	noP	350	t5	8.758094203
+noP_350_t5	noP	350	t5	8.081108696
+noP_350_t5	noP	350	t5	9.556550725
+noP_350_t5	noP	350	t5	9.313152174
+noP_350_t5	noP	350	t5	10.56273913
+noP_350_t5	noP	350	t5	8.230782609
+noP_350_t5	noP	350	t5	9.103695652
+noP_350_t5	noP	350	t5	8.941405797
+noP_350_t5	noP	350	t5	7.435217391
+noP_350_t5	noP	350	t5	8.311550725
+noP_350_t5	noP	350	t5	6.883388889
+noP_350_t5	noP	350	t5	7.881674603
+noP_350_t5	noP	350	t5	8.711857143
+noP_350_t5	noP	350	t5	10.12571429
+noP_350_t5	noP	350	t5	7.495912698
+noP_350_t5	noP	350	t5	9.391428571
+noP_350_t5	noP	350	t5	10.88053968
+noP_350_t5	noP	350	t5	11.42775397
+noP_350_t5	noP	350	t5	10.69786508
+noP_350_t5	noP	350	t5	12.09337302
+noP_350_t5	noP	350	t5	7.006089431
+noP_350_t5	noP	350	t5	7.338276423
+noP_350_t5	noP	350	t5	10.63202439
+noP_350_t5	noP	350	t5	9.245317073
+noP_350_t5	noP	350	t5	
+P_MgCl_t5	P	MgCl	t5	6.788
+P_MgCl_t5	P	MgCl	t5	8.228
+P_MgCl_t5	P	MgCl	t5	7.676
+P_MgCl_t5	P	MgCl	t5	7.407
+P_MgCl_t5	P	MgCl	t5	5.774
+P_MgCl_t5	P	MgCl	t5	7.784
+P_MgCl_t5	P	MgCl	t5	7.556
+P_MgCl_t5	P	MgCl	t5	8.971
+P_MgCl_t5	P	MgCl	t5	7.68
+P_MgCl_t5	P	MgCl	t5	7.204
+P_MgCl_t5	P	MgCl	t5	8.169
+P_350_t5	P	350	t5	10.393
+P_350_t5	P	350	t5	10.827
+P_350_t5	P	350	t5	11.337
+P_350_t5	P	350	t5	8.674
+P_350_t5	P	350	t5	12.021
+P_350_t5	P	350	t5	11.14
+P_350_t5	P	350	t5	12.088
+P_350_t5	P	350	t5	11.576
+P_350_t5	P	350	t5	12.136
+P_350_t5	P	350	t5	11.948
+P_350_t5	P	350	t5	11.301

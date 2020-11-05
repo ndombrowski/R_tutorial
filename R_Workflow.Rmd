@@ -38,13 +38,13 @@ knitr::opts_chunk$set(eval=TRUE, cache=FALSE, message=FALSE, warning=FALSE,
 ###################################################################################
 
 
-R is a statistical programming languate and environment and free, open source and in active development. 
+R is a statistical programming languate and environment and free, open source and in active development. This tutorial will introduce into the basic concepts of R.
 
-This script will work with example data for
+This tutorial will work with example data for:
 
 **(A) Growth data**
 
-- The file **Growth_Data.txt** contains measurements for root length and shoot weight of Arabidopsis under different growth conditions. Plants were grown under normal phosphorus and low P conditions. Next to control (MgCL) treatments plants were also inoculated with different strains of rhizobia to test their effect on plant growth and whether that effect depends on nutrient status. For simplicity only 1 biological experiment with 7-10 individual measurements per treatment is included.
+- The file **Growth_Data.txt** contains measurements for root length and shoot gfresh weight of Arabidopsis under different growth conditions. The file **Timecourse.txt** contains measurements for root length of Arabidopsis under different growth conditions and for 5 different timepoints. Plants were grown under normal phosphorus and low P conditions. Next to control (MgCL) treatments plants were also inoculated with different strains of rhizobia to test their effect on plant growth and whether that effect depends on nutrient status. For simplicity only 1 biological experiment with 7-10 individual measurements per treatment is included.
 
 ```{r, include=TRUE,  eval=TRUE, echo=FALSE, warning=FALSE}
 #read in data
@@ -96,11 +96,13 @@ Therefore, this is a good way for us to comment code.
 ## RStudio (everything in one place):
 ##########################
 
-RStudio is a GUI version of R, which is command-line only. RStudio includes the following:
+R is command-line only while RStudio is a GUI ((graphical user interface)) version of R. 
 
-* Manual, help function
-* Script separate from command-line
-* Lists your variables
+RStudio includes the following:
+
+* Script separate from command-line (left-hand screen)
+* Lists your variables (upper, right-hand corner)
+* Manual and an extensive help function
 * Easy install of new packages
 * Plots are shown within RStudio
 
@@ -112,14 +114,16 @@ RStudio is a GUI version of R, which is command-line only. RStudio includes the 
 ## Getting started with R
 ##########################
 
-If you work with linux (or want to work from with R from the command line but still document), start R by opening a terminal, changing
-directory to the R_exercises folder and then just typing R. Then, you should see something like this:
+If you work with linux or want to start R from the terminal then open your terminal, 
+change your directory to the R_exercises folder and then just type ``R``. 
+Then, you should see something like this:
 
 <p align="left">
   <img width="400" height="400" src="/Users/ninadombrowski/Desktop/WorkingDir/Notebooks/Pictures/R.png">
 </p>
 
-Below is how to run it in a terminal (i.e. on ada). For this to work just remove the # symbol.
+We can use a similar way to connect to R on our servers, i.e ada. 
+For this to work you can use the code below (just remove the # symbol).
 
 ```{r}
 #Ask what R version we have
@@ -139,38 +143,45 @@ Below is how to run it in a terminal (i.e. on ada). For this to work just remove
 
 ### General
 
-One neat way to work with R is to combine R-code with text in R markdown format (rmd). The R markdown
-file specifies code chunks which will be executed in R (or python or bash) and plain text which will be written
-to the report as is. The report is created by rendering the file in R, then the R-code is executed and the
-results are merged in the pdf or html output.
+One nice way to commend code is combine R-code with informative text in R markdown format (rmd). 
+R Markdown supports dozens of static and dynamic output formats including:
+HTML, PDF, MS Word, Beamer, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
 
-The easiest way to get started is to create a first R markdown document using Rstudio: Go to the menu and
-press “File/new File/R markdown”. This will create an R markdown file that already contains some R code
-and text. Do this, and look at the contents of this document.
+The R markdown file specifies code chunks which will be executed in R (or python or bash) and plain text which will be written
+to the report as is. A report is created by rendering the file in R, then the R-code is executed and the
+results are merged in a pdf or html output.
 
-Two useful information sources are accessible from the Rstudio menu: help/cheatsheets/R markdown Cheat
-Sheet and help/cheatsheets/R markdown Reference Guide. Short help on the text format that can be used
-in markdown documents can be found in help/Markdown quick reference.
+How you create a Rmarkdown document in R:
 
-If you work with plain R you can open a new file in any text editor and save it with the .rmd extension and research the format requirements
-on your own. Check out the rmarkdown website and the cheat sheet in the R_exercises folder to get started
-on that (and read on). You can find more R cheat sheets on **https://rstudio.com/resources/cheatsheets/**
+- Open RStudio
+- press “File/new File/R markdown”. 
+
+This will create an R markdown file that already contains some R code and text. 
+You can also open this document (the rmd file) in RStudio and see how the code looks.
+
+You can also open a new file in any text editor and save it with the .rmd extension. 
 
 ### R code in R markdown
 
-* The R-code is embedded inbetween the “‘{r} and “‘ symbols. In Rstudio, on the top-right position of
-such a section you will find three symbols. Pressing the middle one will run all code chunks above,
-while the right symbol will run the current R-chunk.
-* An important menu-button is the “Knit” button. Pressing this button will create the ultimate
-document. You can choose between HTML, PDF and WORD documents. 
+* The R-code is embedded inbetween the **```{bash}** and **```** symbols. 
 
-The cheat sheet can be found here: https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf and will help you also if you want to modify the treatment of code chunks. For example, per default, the R code and its output are written to the report, but you can suppress one or both of that.
+In Rstudio, on the top-right position of such a section you will find three symbols. 
+Pressing the middle one will run all code chunks above,while the right symbol will run the current R-chunk.
+
+<p align="left">
+  <img src="/Users/ninadombrowski/Desktop/WorkingDir/Notebooks/Pictures/R2.png">
+</p>
+
+
+An important menu-button is the **Knit** button at the top, left-hand corner of RStudio. 
+Pressing this button will create the final, rendered document (i.e. a HTML or PDF)
+
 
 ### Text in markdown
 
 * Headings are defined with “#”, or “##”, or “###” for first, second and third level.
 * Lists are created by using “*” for (bullets) and “1”, … for numbered lists.
-* A lot of other options are possible, see the cheat sheets.
+* A lot of other options are possible, more information on these can be found in the following documents.
 
 ### Markdown options
 
@@ -180,19 +191,31 @@ The cheat sheet can be found here: https://www.rstudio.com/wp-content/uploads/20
 * warning = FALSE ---prevents warnings that are generated by code from appearing in the finished.
 * fig.cap = "..." ---adds a caption to graphical results.
 
+
+### Other info on Rmarkdown
+
+You can find some more information on Rmarkdown here:
+
+- The Rmarkdown website: **https://rmarkdown.rstudio.com** 
+- You can find more R cheat sheets on **https://rstudio.com/resources/cheatsheets/**
+- Another info sheet with info how to modify code: **https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf**
+
+
 ## Good practices for coding
 
-* Record all software versions used
-* Document who wrote the code, when you did it and why, maybe on what computer this was run on
+These practices are useful regardless of the computational language you use.
+
+* Record what program versions you used
+* For each project, document who wrote the code, when you did it and why
 * Put dependencies in the beginning (ie packages)
-* Record the wdir
-* Document ALL your code
+* Record the working directory (wdir)
+* Document ALL your code and comment it (using the # symbol)
 * Comment code in detail, so that you can still understand it after 5 years
 * Break code into smaller pieces for better readability
-* Test each line of code
+* Test each line of code and build in control steps
 * If you work with random numbers, report the seed
-* Use sessionInfo() at the end of the script
-* Save objects not workspaces (for space reasons)
+* Use sessionInfo() at the end of the script, which documents all the packages used within R for the current project
+* For larger files: save objects not workspaces (for space reasons)
 * Have descriptive names for objects, short and simple but easy enough to understand what they mean
 
 
@@ -203,7 +226,10 @@ The cheat sheet can be found here: https://www.rstudio.com/wp-content/uploads/20
 ###################################################################################
 ###################################################################################
 
-R Markdown supports several languages, such as bash and phyton, and you can call them in the same way as R code. This is useful if you for example modify a dataframe in bash/on a server but then continue to work on the data R. This procedure then would allow you to document the code in the same document. Below is just an example and part of the syntax we will explain latter. A general introduction into bash and awk is provided in two separate notebooks.
+R Markdown supports several languages, such as bash and phyton, and you can call them in the same way as R code. 
+This is useful if you for example modify a dataframe in bash but then want continue to work on the data R. 
+With proper documenting you can document the code in the same file. 
+Below is just an example, we see that we only need to "tell" R to use bash instead of R
 
 ```{bash}
 #run echo to print something to the screen
@@ -225,21 +251,8 @@ awk 'BEGIN{FS=","}{print $2}' GenomeInfo.txt > Output_examples/bash_example.txt
 head Output_examples/bash_example.txt
 ```
 
-Print things stored in R in bash chunk
+A general introduction into bash and awk is provided in two separate tutorials that are also available on github.
 
-```{r}
-#define variable
-test_variable <- 10
-
-#export variable to bash
-Sys.setenv(test_variable = 10)
-```
-
-Read in the variable using bash
-
-```{bash}
-echo $test_variable
-```
 
 
 
@@ -250,12 +263,15 @@ echo $test_variable
 ## Getting help
 ##########################
 
-1. Online
+If you have issues, there is a lot of help online
+
+1. Online you can check:
+
 * www.r-project.org
 *stack overflow
 *many more
 
-2. Inside of R
+2. Inside of R:
 
 ```{r}
 help(mean)
@@ -266,10 +282,12 @@ help(mean)
 ## What is a workspace?
 ##########################
 
-The workspace is your current R working environment and includes any user-defined objects (vectors, matrices, data frames, lists, functions). At the end of an R session, the user can save an image of the current workspace that is automatically reloaded the next time R is started. 
+The workspace is your current R working environment and includes any user-defined objects (i.e. vectors, matrices, data frames, lists, functions). 
+At the end of an R session, the user can save an image of the current workspace that is automatically reloaded the next time R is started. 
 
-- From now on the code is in the grey area.
-- If you see a line symbol, such as ``[1]`` then this shows the result of running our code. For example, first we run the code ``getwd()`` and the second box shows us the results.
+- From now on the code is shown in the grey area.
+- If you see a line symbol, such as ``[1]`` then this shows the result of running our code. 
+- For example, first we run the code ``getwd()`` and the second box shows us the results.
 
 
 ```{r}
@@ -279,22 +297,6 @@ getwd()
 #list the objects in the current workspace
 ls()   
 ```
-
-
-## What are objects?
-##########################
-
-A unit that you work with, i.e. data and functions. 
-
-Characteristics = Data type (kind of data) and data structure (the container)
-
-* Data type = numeric, characters, factors, ... You can identify your data type with the function typeof()
-
-* Data structure= vector, matrix, list. You can identify the structure with class() or is()
-
-* str() = defines what the indiv. components of your data are
-
-
 
 
 ## Setting your working directory (wdir)
@@ -308,13 +310,15 @@ An example would be something with a structure like this:
   <img width="400" height="400" src="/Users/ninadombrowski/Desktop/WorkingDir/Notebooks/Pictures/FolderStructure.png">
 </p>
 
-Here, we have 4 projects, and in each folder we have the R_script and folders for the required input and required output files. Also useful to have is a text file with the session info and if you plan to share this with others it is also good to have a README file that provides some background on the analysis done.
+In this example you see that we have 4 projects, and in each folder we have the R_script and folders for the required input and required output files. Also useful to have is a text file with the session info and if you plan to share this with others it is also good to have a README file that provides some background on the analysis done.
 
 Options to see the working dir and set the working directory in R are:
 
 ```{r, eval=FALSE}
+#print your wdir
 getwd()
 
+#setting your wdir
 setwd(getwd())
 ```
 
@@ -334,37 +338,29 @@ We have two ways to install packages:
 
 1. Via the console by typing:
 
-install.packages("package-name") 
+``install.packages("package-name")``
 
 This will download a package from one of the CRAN mirrors assuming that a binary is available for your operating system. If you have not set a preferred CRAN mirror in your options(), then a menu will pop up asking you to choose a location.
 
-Use old.packages() to list all your locally installed packages that are now out of date. update.packages() will update all packages in the known libraries interactively. This can take a while if you haven’t done it recently. To update everything without any user intervention, use the ask = FALSE argument.
+Use ``old.packages()`` to list all your locally installed packages that are now out of date. 
+``update.packages()`` will update all packages in the known libraries interactively. This can take a while if you haven’t done it recently. To update everything without any user intervention, use the ask = FALSE argument.
 
 2. Using R studio:
 
 Go to the lower right hand-side window and click on packages and then install. Find the packages your are interested in.
 
-Notice: If libraries come with their own data (i.e. example tables), then the data needs to be loaded separately. I.e. via data(cars)
+Notice: If libraries come with their own data (i.e. example tables), then the data needs to be loaded separately. I.e. via ``data(cars)`` to load the cars data from the cars package.
 
 
 ### Loading packages into your current R session
 
-R will not remember what libraries you have loaded after you closed R. Therefore, you need to load necessary libraries everytime. Here, we will load some libraries that are usually quite helpful and it is recommended to make the libraries you load part of each of your scripts.
+R will not remember what libraries you have loaded after you closed R. Therefore, you need to load necessary libraries everytime. Here, we will load some libraries that are usually quite helpful and it is recommended to make the libraries you load part of each of your scripts. For example like this:
 
 ```{r}
-#needed for Rmarkdown
-library(knitr)
-library(kableExtra)
 
-#other useful packages for data treatment, plotting and stats
-library(tinytex)
-library(stats)
+#some example packages needed for Rmarkdown
 library(knitr)
 library(kableExtra)
-library(ggplot2)
-library(data.table)
-library(tidyr)
-library(plyr)
 ```
 
 
@@ -374,33 +370,34 @@ library(plyr)
 
 The ``<-`` symbol assigns a value to a variable,
 
-General rules for the syntax:
+General rules for the syntax R uses:
 
-* If you work with characters, i.e. words like 'hello', then this need to written like this: "hello" (this will become clearer below)
 * R is case sensistive
 * If a variable exists, it will overwrite it with a new variable without asking
+* If you work with characters, i.e. words like 'hello', then this need to written with quotes around it: "hello" (this will become clearer below)
 * ls() shows all the variables that are known by the system at the moment
-* you can remove indiv. objects with rm() and remove all objects rm(list=ls())
+* you can remove indiv. objects with ``rm()`` and remove all objects ``rm(list=ls())``
 
 For example: 
 
 We can store our path for the working directory in a variable, which is useful if we want to re-run our script from the same folder.
 
-**Notice** can the path to whereever you download the tutorial. 
+**Notice** set the path to where ever you download the tutorial. 
 
 ```{r}
 
 #store a path (a character string) to a variable with the name wdir
 wdir <- "~/Desktop/WorkingDir/Github_Workflows/R_tutorial"
 
-#print variable to screen
+#print variable to screen to see if we stored the right thing in our variable
 wdir
 
-#use our new  variable to set our wdir
+#use our new  variable to set our wdir to the correct path
 setwd(wdir)
 ```
 
-We can store more or less everything in a variable and use it later.
+We can store more or less everything in a variable and use it later. 
+For example, we can store numbers and do some math with them:
 
 ```{r}
 
@@ -416,16 +413,15 @@ x+y
 ## Use build in functions
 ##########################
 
-Functions are build in code that we can use to make our life easier, i.e. we can calculate lengtsh of vectors or do math and do statistical analyses. 
+Functions are build in code that we can use to make our life easier, i.e. we can calculate lengtsh of vectors, do math or do statistical analyses. 
 Base R already knows many useful functions but loading new packages greatly increases our repertoire.
 A list of most used functions can be found here: **http://www.statmethods.net/management/functions.html**
 
 A function consists of:
 
 1. Function name
-2. Arguments (optional, some might be set with a default)
+2. Arguments (optional, some might be set with a default) = control how exactly the function behaves
 3. Body of the function = defines what the function does
-4. return = in case the function returns a variable
 
 As an example lets test some simple functions: print and log:
 
@@ -437,6 +433,7 @@ print(3+5)
 #use the log function
 log(10)
 ```
+
 
 ### Call the default values of a function
 
@@ -465,6 +462,8 @@ Function=c("List objects in your current workspace ", "Remove object from your c
 kable(table1, format = "markdown", align = 'l', booktabs = T) %>%
 kable_styling(latex_options = "striped", position = "left")
 ```
+
+
 
 
 
@@ -499,19 +498,19 @@ General notice:
 ```{r}
 
 #read in data
-growth_data <- read.table("Input_files/Growth_Data.txt", sep="\t", header=T,  quote = "")
+timecourse <- read.table("Input_files/Timecourse.txt", sep="\t", header=T,  quote = "")
 
 #check the first few lines of our data
-kable(head(growth_data), format='markdown')
+kable(head(timecourse), format='markdown')
 
 #check the dimensions of our data
-dim(growth_data)
+dim(timecourse)
 
 #check the column names
-colnames(growth_data)
+colnames(timecourse)
 
 #check the row names
-rownames(growth_data)
+rownames(timecourse)
 
 ```
 
@@ -530,27 +529,74 @@ Now, if we would have modified the table we might want to store it on your compu
 Notice, we always start from the location we set as working directory. 
 
 ```{r}
-write.table(growth_data, "Output_examples/growth_data_changed.txt",  sep = "\t", row.names = T, quote =F)
+write.table(timecourse, "Output_examples/timecourse_changed.txt",  sep = "\t", row.names = T, quote =F)
 ```
 
 - sep --> we define what delimiter we want to use
 - row.names = T --> we want to include whatever is in the rownames
 - quote = F --> we do not want R to add any quotes around our columns.
 
+
+
+
+## What are objects?
+##########################
+
+In R, all types of data are treated as objects. 
+As such objects are units that we work with, i.e. data and functions. 
+
+Roughly we distinguish between:
+
+* Data types = For example: numeric, characters, factors, ... You can identify your data type with the function typeof()
+* Data structures = For example: vector, matrix, list. You can identify the structure with class() or is()
+* str() = defines what the indiv. components of your data are
+
+Everything that exists is an **object.**
+Everything that happens is a **function call**.
+
+Below, we introduce all these differnt types of objects.
+
+
+
 ###################################################################################
 # Data structures
 ###################################################################################
 
-As is rue for many things, knowing the right terminology is important, especially if we need help with something.
+Ao make the best of the R language, you'll need a strong understanding of the basic data types and data structures and how to operate on those.
 When programming, data/values/etc are stored in different ways: 
 
-- real **numbers** (3.14), 
-- **characters** ("hello"), 
-- **logical variables** (TRUE),etc. 
+R has 6 atomic classes.
 
-In R, you do not need to specify the type of data a variable will receive beforehand. You simply do the
-assignment, R will create a so called R-Object and assign a data type automatically. There are many types
-of R-Objects, the most frequently used ones being:
+- character = "hello"
+- numeric (real or decimal) = 3, 14, ....
+- logical = TRUE
+- complex = 1+4i
+- integer = 2 (Must add a L at end to denote integer)
+- double = (a number class, like the integer but with double precision floating points)
+
+Here, is a quick example, how we can find out some things about our objects using:
+
+- - ``c()``= a function that will create a vector (a one dimensional array) and in our case store 3 numbers. We need to use this everytime we deal with more than one number, character, etc....
+- ``class()`` = what class is our data?
+- ``length()`` = how long is our data?
+
+```{r}
+
+#create some objects
+character_object <- "dataset"
+number_object <- c(1,4,5)
+
+#asking with what type we work
+class(character_object)
+class(number_object)
+
+#ask how long our objects are
+length(character_object)
+length(number_object)
+
+```
+
+There are many types of data structures, the most frequently used ones being:
 
 * Vectors
 * Factors
@@ -560,32 +606,45 @@ of R-Objects, the most frequently used ones being:
 
 Certain operations only work on certain kind of structures, therefore, it is important to know what kind of data we are working with.
 
-## Vector
+In R, you do not need to specify the type of data a variable will receive beforehand. 
+You simply do the assignment, R will create a so called R-Object and assign a data type automatically. 
+
+
+## Vectors
 ##########################
 
-A vector is a collection of items of the same type (i.e characters, numbers). You can read in numbers and characters into the same vector, however, the number will be then seen as a character.
-
-- ``length()`` = a function that allows us to quickly ask how long an object, such as a vector, is.
-- ``c()``= a function that will create a vector (a one dimensional array) and in our case store 3 numbers. We need to use this everytime we deal with more than one number, character, etc....
-- square brackets [] = allow us to retrieve certain elements of a vector, i.e. [3] retrieves the 3rd element
-- we can combine ``c()`` and [] if we want to retrieve several elements of a vector.
-
+A vector is a collection of items of the same type (i.e characters, numbers). You can read in numbers and characters into the same vector, however, the number will be then seen as a character if you mix different classes.
 
 ```{r}
 #lets create a random vector
-our_own_vector <- c(2, 3, 5) 
+a_vector <- c(2, 3, 5, 7, 1) 
 
 #show the vector we just created
-our_own_vector
-
-#retrieve the third element stored in a vector
-our_own_vector[3]
-
-#retrieve the 1st and 3rd element by combining ``c()`` and []
-our_own_vector[c(1,3)]
+a_vector
 
 #asking how long your vector is
-length(our_own_vector)
+length(a_vector)
+
+```
+
+
+### Vector indexing
+
+If we want to only retrieve part of the data stored in a vector we can create a subset using the index as shown below.
+
+- square brackets [] = allow us to retrieve certain elements of a vector, i.e. [3] retrieves the 3rd element
+- we can combine ``c()`` and [] if we want to retrieve several elements of a vector.
+
+```{r}
+
+#retrieve the third element stored in a vector
+a_vector[3]
+
+#retrieve the 1st and 3rd element by combining ``c()`` and []
+a_vector[c(1,3)]
+
+#retrieve the 1-3rd element
+a_vector[c(1:3)]
 
 #we can also add vectors of the same length together
 x <- c(1,2,3,4)
@@ -606,35 +665,41 @@ y <- c(1,2,3,4)
 x + y
 ```
 
-### Vector indexing
+Another way to extend vectors is:
 
-If we want to only retrieve part of the data stored in a vector we can create a subset using the index between square brackets ``[]``, e.g.,
+- ``append()`` --> Add elements to a vector.
 
 ```{r}
-#create a vector
-x <- 1:10
-x
 
-#retrieve the second element from our vector
-x[2]
+#add another datapoint to our vector
+a_vector <- append(a_vector, 13)
+a_vector
 
-#retrieve the 4-6th element
-x[4:6]
+#add +1 to all our four numbers
+a_vector <- a_vector + 1
+a_vector
+
+#remove the first element of our vector
+a_vector <- a_vector[-1]
+a_vector
 ```
 
 We not only can extract the nth element but if we have header names then we can also use these to retrieve data:
 
 ```{r}
-#create a vector and give it names
-x <- c(3,4,5)
-names(x) <- c("oranges","apples","bananas")
+#create a vector and give it names (i.e. for counts from some microbes)
+x <- c(300, 410, 531)
+names(x) <- c("Ecoli","Archaeoglobus","Ignicoccus")
 
 #check how our data looks
 x
 
 #now we can retrieve part of the vector using the names
-x[c("apples","oranges")]
+x[c("Ecoli","Ignicoccus")]
 ```
+
+
+### Changing vectors
 
 We can also change elements in our vector:
 
@@ -645,7 +710,7 @@ x <- 1:10
 #change the second last positions to 5 and 9
 x[9:10] <- c(5,9)
 
-#check if this worled
+#check if this worked
 x
 
 #we can not only add things, we can also remove this using the minus/**-** symbol
@@ -655,9 +720,287 @@ x[-3]
 x[-(4:10)]
 ```
 
-### Dealing with NAs in our data
 
-#### Removing NAs
+## Matrix
+##########################
+
+Matrices are the R objects in which the elements are arranged in a two-dimensional rectangular layout. 
+They contain elements of the same type. 
+Although you can construct matrices with characters or logicals, matrices are generally used to store numeric data. 
+
+The basic syntax for creating a matrix is:
+
+**matrix(data, nrow, ncol, byrow, dimnames)**
+
+- data: input vector whose components become the data elements from the matrix.
+- dnrow: number of rows to be created.
+- dncol: number of columns to be created.
+- dbyrow: logical. If FALSE,(the default) the matrix is filled by columns, otherwise the matrix is filled by rows.
+- ddimnames: A ‘dimnames’ attribute for the matrix: NULL or a list of length 2 giving the row and column names respectively.
+
+In contrast in a data frame (see below) the columns contain different types of data, while in a matrix all the elements are the same type of data. A matrix in R is like a mathematical matrix, containing all the same type of thing (usually numbers). R often but not always can use dataframes and a matrix used interchangably.
+
+* Individual elements in a matrix can be printed using **[row,column]**. For example **[2,3]** would pull out the value in the 2nd ROW and third COLUMN.
+
+- ```dim()``` is extremely useful to control whether our data was transformed correctly during different operations. For example, after we merge two files we would like to know that they still have the same number of rows as when we started the analysis. Same if we remove for example 10 samples, then we want to make sure that this is indeed what happened.
+- ``head()`` is another useful function to check the first rows of a larger matrix (or dataframe)
+- ``tail()`` same as head but showing the last rows
+
+
+```{r}
+#define our row and column names
+row.names = c("row1", "row2", "row3", "row4")
+col.names = c("col1", "col2", "col3")
+
+#create our matrix (check the help function to see what is happening)
+matrix_A <- matrix(c(3:14), nrow = 4, byrow = T, dimnames = list(row.names,col.names))
+
+#check how our matrix looks like
+matrix_A
+
+#print the value in the 2row and 3rd column
+matrix_A[2,3]
+
+#print the values in the 3rd column
+matrix_A[,3]
+
+#print everything except the 1st row
+matrix_A[-1,]
+
+#print everything except the 2nd column
+matrix_A[,-2]
+
+#see the dimensions of matrix, i.e. the nr of rows and columns
+dim(matrix_A)
+
+#check the first rows of our matrix, since our data is small, everything is shown
+head(matrix_A)
+```
+
+
+
+## Lists
+##########################
+
+Sometimes you need to store data of different types. For example, if you are collecting cell counts, you might want to have cell counts (numeric), the microbes investigated (character), their status (logical, with TRUE for alive and FALSE for dead, .... This kind of data can be stored in lists. Lists are the R objects which contain elements of different types (numeric, strings, vectors, even another list, or a matrix).
+
+A list is created using the list() function.
+
+For example, the following variable x is a list containing copies of three vectors n, s, b.
+
+```{r}
+#define our vectors
+n = c(20, 30, 50) 
+s = c("Ecoli", "Archaeoglobus", "Bacillus") 
+b = c(TRUE, FALSE, TRUE) 
+
+#combine the vectors in a list
+our_list = list(counts=n, strain=s, status=b) 
+
+#show our list
+our_list
+
+#sublist the second element in a list
+our_list[2]
+
+#retrieve the 2nd and 3rd member of our list
+our_list[c(2, 3)] 
+
+#we can also retrieve elements of a list if we know the name using two different ways:
+our_list$strain
+our_list[["strain"]]
+```
+
+In the last example we use the ``$`` dollar symbol to extract data, i.e. to extract variables in a dataset (a matrix, list, dataframe).
+I.e. above the data we want to access is 'our_list' and the variable we want to extract is the strain.
+
+
+## Dataframes
+##########################
+
+Dataframes are tables in which each column contains values of one variable type and each row contains one set of values from each column. 
+You can think of a data frame as a list of vectors of equal length.
+Most of our data very likely will be stored as dataframes.
+
+A Dataframe usually follows these rules:
+
+- The top line of the table, called the header, contains the column names. 
+- Column names (i.e. the header of our data) should be non-empty (if they are, R provides the object with default values).
+- Row names should be unique
+- Each column should contain the same number of data items
+- Each horizontal line after the header is a data row, which begins with the name of the row, and then followed by the actual data. 
+- Each data member of a row is called a cell.
+
+Importantly, most of the things we have learned before, i.e. how to subset data, apply here too.
+
+The growth data that we have read into R will be used to explain how dataframes work.
+
+
+### Viewing data Dataframes
+
+- We can use the brackets as before to extract certain rows or columns.
+- We can use the dollar sign to again extract information as long as we know the column names. I.e. now we want to access the shoot fresh weight (FW_shoot_mg) in our 'growth_data' dataframe.
+- ``colnames()`` allows us to access the column names, i.e. the headers
+- ``rownames()`` allows us to access the rownames of our data (usually these are numbered if not specified otherwise while reading the table)
+- ``dim()`` allows us to check the dimensions (i.e. the number of rows and columns). This is useful to regullary check, especially if we modified our data somehow. 
+- ``head()`` shows the first rows of our dataframe
+
+
+```{r}
+#view our table
+kable(head(timecourse), format='markdown')
+
+#check how many rows and columns our data has
+dim(timecourse)
+
+#extract the data from the 2nd row
+timecourse[2,]
+
+#extract the first three columns
+head(timecourse[,1:3])
+
+#extract a column of our data using the column name
+head(timecourse$Timepoint)
+
+#print our headers
+colnames(timecourse)
+
+#get the dimensions
+dim(timecourse)
+
+```
+
+When we print the rownames, we see that we have numbers from 1-105. When reading in a table into R it is the default behaviour how rownames are generated.
+As a general rule, if you want o have other rownames, these must be unique.
+
+
+### Adding new columns to Dataframes
+
+Below is a very basic way to add a new column (we name it newColumn) and fill all rows with the word `comment`
+
+```{r}
+
+#expand a dataframe, functions data.frame or cbind (or see below)
+timecourse$newColumn <- "comment"
+
+#check if that worked
+kable(head(timecourse), format='markdown')
+
+```
+
+There are more sophisticated ways to add columns based on conditions or even merge dataframes. Some of these we will discuss later.
+
+
+
+## How can we check what kind of structure our data has?
+##########################
+
+If we read in our own data, we should check as what type of class our table is stored. We have several ways to do this:
+
+- ``class()`` = determines as what kind of object is stored
+- ``str()`` = display the internal structure of an R object. 
+
+```{r}
+#check what kind of data we have:
+class(timecourse)
+
+#check how are different parts of our data stored?
+str(timecourse)
+```
+
+We see that
+
+- our data is stored in a dataframe
+- that the data stored in different formats, i.e. numeric and characters
+- the first 3 columns are stored in something we call a factor.
+
+
+## Factors
+##########################
+
+Factors are data objects that are used to represent categorical data and store it in its different levels. 
+They are an important class for statistical analysis and for plotting.
+Factors are stored as integers, and have labels associated with these unique integers. 
+Once created, factors can only contain a pre-defined set values, known as levels. By default, R always sorts levels in alphabetical order. 
+
+- ``factor()`` allows us to create our own factor
+
+```{r}
+
+#lets make a vector
+Nutrients <- c("P", "P", "noP", "noP")
+
+#lets make our own simple factor
+Nutrients_factor <- factor(c("P", "P", "noP", "noP"))
+
+#lets compare the vector and factor we generated
+Nutrients
+Nutrients_factor
+
+```
+
+When we check our factor, we see that R assigns one level to ``P`` and another level to ``noP``. 
+We can also see, that R sorts the levels in an alphabetical way, even though in the initial code we first had P before noP.
+
+
+### Checking the behaviour of factors
+
+Now, lets check how factors behave.
+
+- ``levels()`` = only prints the levels of a given factor. We can also run this on any column of our dataframe.
+- ``nlevels()`` = check how many levels we have.
+- While factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. We can test this by looking at what type of object we generated.
+
+```{r}
+
+#only print the levels
+levels(Nutrients_factor)
+levels(growth_data$Condition)
+
+#check how many levels we have
+nlevels(Nutrients_factor)
+
+#what class do we have
+class(Nutrients_factor)
+typeof(Nutrients_factor)
+
+```
+
+### Ordering factor levels
+
+For some thing, the order of things might matter and then we need to order the factors ourselves.
+
+```{r}
+
+#check our levels
+levels(Nutrients_factor)
+
+#reorder levels
+Nutrients_factor_reordered <- factor(Nutrients_factor, levels = c("P", "noP"))
+
+#check our levels
+levels(Nutrients_factor_reordered)
+
+```
+
+
+### Converting factors
+
+Sometimes you need to explicitly convert factors to either text or numbers. Or numbers to characters, etc.
+To do this, you use the functions ``as.character()`` or ``as.numeric()``.
+
+```{r}
+
+#convert our factor to a character
+Nutrients_characters <- as.character(Nutrients_factor)
+Nutrients_characters
+
+```
+
+
+## Dealing with NAs in our data
+
+### Removing NAs
 
 NAs are generated when our data contains a missing value. This can become problematic for certain programs and we can decide to remove all NAs.
 The function to do this is ``is.na``. 
@@ -703,233 +1046,25 @@ Notice, that here we use a similar syntax compared to before. Now we do
 - Find the NAs (I.e. in this example we have FALSE FALSE FALSE  TRUE FALSE)
 - If NA is TRUE then replace it with a 0
 
+### Replacing NAs in our dataframe
 
-
-## Matrix
-##########################
-
-Matrices are the R objects in which the elements are arranged in a two-dimensional rectangular layout. 
-They contain elements of the same type. 
-Although you can construct matrices with characters or logicals, matrices are generally used to store numeric data. 
-The basic syntax for creating a matrix is:
-
-**matrix(data, nrow, ncol, byrow, dimnames)**
-
-- data: input vector whose components become the data elements from the matrix.
-- dnrow: number of rows to be created.
-- dncol: number of columns to be created.
-- dbyrow: logical. If FALSE,(the default) the matrix is filled by columns, otherwise the matrix is filled by rows.
-- ddimnames: A ‘dimnames’ attribute for the matrix: NULL or a list of length 2 giving the row and column names respectively.
-
-In contrast in a data frame (see below) the columns contain different types of data, while in a matrix all the elements are the same type of data. A matrix in R is like a mathematical matrix, containing all the same type of thing (usually numbers). R often but not always can use dataframes and a matrix used interchangably.
-
-* Individual elements in a matrix can be printed using **[row,column]**. For example **[2,3]** would pull out the value in the 2nd ROW and third COLUMN.
-* ```dim()``` is extremely useful to control whether our data was transformed correctly during different operations. For example, after we merge two files we would like to know that they still have the same number of rows as when we started the analysis. Same if we remove for example 10 samples, then we want to make sure that this is indeed what happened.
+If we check our example dataframe, i.e. row 30, we will see that we have NAs.
+Le's remove them from our dataframe for all further analyses. 
 
 
 ```{r}
-#define our row and column names
-row.names = c("row1", "row2", "row3", "row4")
-col.names = c("col1", "col2", "col3")
 
-#create our matrix (check the help function to see what is happening)
-matrix_A <- matrix(c(3:14), nrow = 4, byrow = T, dimnames = list(row.names,col.names))
+#check for NAs
+timecourse[30,]
 
-#check how our matrix looks like
-matrix_A
+#remove rows that contain NAs
+timecourse_noNA <- timecourse[!is.na(timecourse$Rootlength), ]
 
-#print the value in the 2row and 3rd column
-matrix_A[2,3]
-
-#print the values in the 3rd column
-matrix_A[,3]
-
-#print everything except the 1st row
-matrix_A[-1,]
-
-#print everything except the 2nd column
-matrix_A[,-2]
-
-#see the dimensions of matrix, i.e. the nr of rows and columns
-dim(matrix_A)
-```
-
-
-
-
-## Lists
-##########################
-
-Sometimes you need to store data of different types. For example, if you are collecting data of a patient, you might want to have cell counts (numeric), the microbes we investigated (character), their status (logical, with TRUE for alive and FALSE for dead, for instance), etc. This kind of data can be stored in lists. Lists are the R objects which contain elements of different types (numeric, strings, vectors, even another list, or a matrix).
-
-A list is created using the list() function.
-
-For example, the following variable x is a list containing copies of three vectors n, s, b, and a numeric value 3 (which might be the replicate number of something else).
-
-```{r}
-#define our vectors
-n = c(20, 30, 50) 
-s = c("Ecoli", "Archaeoglobus", "Bacillus") 
-b = c(TRUE, FALSE, TRUE) 
-
-#combine the vectors in a list
-our_list = list(counts=n, strain=s, status=b, random = 3) 
-
-#show our list
-our_list
-
-#sublist the second element in a list
-our_list[2]
-
-#retrieve the 2nd and 3rd member of our list
-our_list[c(2, 3)] 
-
-#we can also retrieve elements of a list if we know the name using two different ways:
-our_list$strain
-our_list[["strain"]]
-```
-
-In the last example we use the dollar symbol to extract data, i.e. to extract variables in a dataset (a matrix, list, dataframe).
-I.e. above the data we want to access is 'our_list' and the variable we want to extract is the strain.
-
-
-## Dataframes
-##########################
-
-The R-Object data frame is a table in which each column contains values of one variable type and each row contains one set of values from each column. 
-You can think of a data frame as a list of vectors of equal length.
-Most of our data very likely will be stored as dataframes.
-
-A Dataframe usually follows these rules:
-
-* Column names (i.e. the header of our data) should be non-empty (if they are, R provides the object with default values).
-* Row names should be unique
-* Each column should contain the same number of data items
-* Numeric and logical vectors and factors are included as is, whereas character vectors are coerced to factors, unless one sets the argument stringsAsFactors to F.
-*  typeof(df.object) is list (type or storage mode) and class(df.object) is data.frame (the class of the object).
-
-- The top line of the table, called the header, contains the column names. 
-- Each horizontal line afterward denotes a data row, which begins with the name of the row, and then followed by the actual data. 
-- Each data member of a row is called a cell.
-
-Importantly, most of the things we have learned before, i.e. how to subset data, apply here too.
-
-The growth data we provide as test data is a dataframe. Therefore, we can check this data for different characteristics of a dataframe.
-
-
-### Viewing data Dataframes
-
-- We can use the brackets as before to extract certain rows or columns.
-- We can use the dollar sign to again extract information as long as we know the column names. I.e. now we want to access the shoot fresh weight (FW_shoot_mg) in our 'growth_data' dataframe.
-- ``colnames()`` allows us to access the column names, i.e. the headers
-- ``rownames()`` allows us to access the rownames of our data (usually these are numbered if not specified otherwise while reading the table)
-- ``dim()`` allows us to check the dimensions (i.e. the number of rows and columns). This is useful to regullary check, especially if we modified our data somehow. 
-
-
-```{r}
-#view our table
-kable(head(growth_data), format='markdown')
-
-#extract the data from the 2nd row
-growth_data[2,]
-
-#extract the first three columns
-head(growth_data[,1:3])
-
-#extract a column of our data using the column name
-head(growth_data$FW_shoot_mg)
-
-#print our headers
-colnames(growth_data)
-
-#print the rownames
-rownames(growth_data)
-
-
-#get the dimensions
-dim(growth_data)
+#check the data
+timecourse[30,]
+timecourse_noNA[30,]
 
 ```
-
-### Adding new columns to Dataframes
-
-Below is a very basic way to add a new column (we name it newColumn) and fill all rows with the word `Experiment1`
-
-```{r}
-
-#expand a dataframe, functions data.frame or cbind (or see below)
-growth_data$newColumn <- "Experiment1"
-
-```
-
-There are more sophisticated ways to add columns based on conditions or even merge dataframes. All of these things we will discuss later.
-
-
-
-## How can we check what kind of structure our data has?
-##########################
-
-If we have our own table, we might want to see as what kind of data our table is stored. We have several ways to do this
-
-- ``class()`` = determines as what kind of object is stored
-- ``str()`` = display the internal structure of an R object. 
-
-There are different structures that can be stored in a dataframe.
-
-1. character: "a", "swc"
-2. numeric: 2, 15.5
-3. integer: 2L (the L tells R to store this as an integer)
-4. logical: TRUE, FALSE
-5. complex: 1+4i (complex numbers with real and imaginary parts)
-
-
-```{r}
-#check what kind of data we have:
-class(growth_data)
-
-#check how are different parts of our data stored?
-str(growth_data)
-```
-
-
-## Factors
-##########################
-
-Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values, e.g., "Male", "Female", TRUE, FALSE etc. They are also useful in data analysis for statistical modeling.
-
-```{r}
-gender <- c("male","male","female", "female", "male","female")
-gender
-
-#what class do we have
-class(gender)
-typeof(gender)
-
-```
-
-Here, we see that the variable gender is of class factor.
-
-
-## Levels
-##########################
-A level is a vector of all possible values of a certain column.
-
-Check the structure of part of your dataframe with:
-
-```{r}
-growth_data$Nutrient
-```
-
-Here, we can see that Nutrient data column has 105 elements and 2 levels (P and noP). 
-
-We can check the class of an indiv. variable using ``class()``  or of all variables of a dataframe using ``str()`` .
-
-```{r}
-class(growth_data$Nutrient)
-str(growth_data)
-```
-
-
 
 
 ###################################################################################
@@ -969,13 +1104,13 @@ Notice: At the moment, we do not want to clean up the working directory, therefo
 ###################################################################################
 ###################################################################################
 
-* R can do the same as a calculator and knows basic operations.
-* Comments in R are preceeded by a #. Whenever this key is encountered, everything printed after it will be ignored
-* In expressions and assignments, R does not care about spaces.
-* Another important character is the semicolon. R evaluates code line by line. A line break tells R that a statement has to be evaluated. Instead, you can use a semicolon to tell R where a statement ends.
+- R can work as a calculator and knows all basic operations
+- In expressions and assignments, R does not care about spaces
+- Another important character is the semicolon. R evaluates code line by line. A line break tells R that a statement has to be evaluated. Instead, you can use a semicolon to tell R where a statement ends
 
 ```{r}
-#adding stuff
+
+#add
 3+2 
 
 #multiply
@@ -999,11 +1134,11 @@ Notice: At the moment, we do not want to clean up the working directory, therefo
 ## Logical operators
 ##########################
 
-One of the most important features of R (and of any programming language) are logical operators. When R
-evaluates an expression containing logical operators, it will return either TRUE or FALSE. It follows a list of
-them:
+One important features of R (and of any programming language) are logical operators. 
+When R evaluates an expression containing logical operators, it will return either TRUE or FALSE. It follows a list of them:
 
 ```{r table_useful2, echo=FALSE, message=FALSE, warnings=FALSE}
+
 table2 <- data.frame(
 Operator = c("<",">","<=",">="),
 Meaning = c("less than ", "greater than ", "less than or equal to", "greater than or equal to" ),
@@ -1027,36 +1162,23 @@ kable(table2, format = "markdown",  align = 'l', booktabs = T,
 (1==1& 1>2) | 5<6
 
 #only print data for the normal P conditions
-P_data <- growth_data[growth_data$Nutrient == "P", ]
+P_data <- timecourse_noNA[timecourse_noNA$Nutrient == "P", ]
 
 #test that all went ok
-dim(growth_data)
+dim(timecourse_noNA)
 dim(P_data)
 
-#we can also subset our data by numbers, i.e. only keep rows were roots are longer than 10cm
-growth_data_10cm <- growth_data[growth_data$Rootlength_cm > 10, ]
+#we can also subset our data by numbers, i.e. only keep rows were roots are longer than 5cm
+growth_data_10cm <- timecourse_noNA[timecourse_noNA$Rootlength > 5, ]
 dim(growth_data_10cm)
 
-#instead of keeping rows with roots longer than 10cm we can also remove them using *!*
-growth_data_no10cm <- growth_data[!growth_data$Rootlength_cm > 10, ]
+#instead of keeping rows with roots longer than 5cm we can also remove them using *!*
+growth_data_no10cm <- timecourse_noNA[!timecourse_noNA$Rootlength > 5, ]
 dim(growth_data_no10cm)
 ```
 
 **Above you see a good example why dim() can very useful as it allows us to quickly check that what we do actually works. Always check afterwards that your function did what you expect you to do since as long as R is able to do something it will do it regardless if that might be different that you want R to do.**
 
-
-## Execute commands from a file
-##########################
-
-If you have a file that stores R commands, e.g. custom functions or (parts of) an analysis, let’s say
-my_script.R in your working directory, they can be executed in the R session by typing the command
-source. For example, collaborators might give you scripts or you later might decide to write your own.
-
-```{r}
-#source("my.script")
-```
-
-This section will be extended at a later point.
 
 
 ## Useful functions
@@ -1077,43 +1199,6 @@ kable(table_useful3, format = "markdown", align = 'l', booktabs = T )
 ```
 
 
-
-
-## Changing part of our data
-##########################
-
-Data that can be changed is called mutable, while data that cannot be is called immutable. 
-Like strings, numbers are immutable: there’s no way to make the number 0 have the value 1 or vice versa (at least, not in R—there actually are languages that will let people do this, with predictably confusing results). 
-Vectors, data frames, and matrices, on the other hand, are mutable: they can be modified after they have been created.
-
-Programs that modify data in place can be harder to understand than ones that don’t because readers may have to mentally sum up many lines of code in order to figure out what the value of something actually is.
-
-On the other hand, programs that modify data in place instead of creating copies that are almost identical to the original every time they want to make a small change are much more efficient. There are many ways to change the contents of a vector and some examples are listed below. 
-
-We also use a new function:
-
-- ``append()`` --> Add elements to a vector.
-
-```{r}
-#lets make a vector
-our_own_vector <- c(1, 3, 5, 7, 9)
-our_own_vector
-
-#add another datapoint to our vector
-our_own_vector <- append(our_own_vector, 13)
-our_own_vector
-
-#add +1 to all our four numbers
-our_own_vector <- our_own_vector + 1
-our_own_vector
-
-#remove the first element of our vector
-our_own_vector <- our_own_vector[-1]
-our_own_vector
-```
-
-
-
 ## Subsetting our data
 ##########################
 
@@ -1123,15 +1208,18 @@ We already have seen important ways to subset data:
 
 ```{r}
 #subsetting rows and columns using the index
-growth_data[1:3,2:4]
+timecourse_noNA[1:3,2:4]
 ```
 
 2. Use of operators
 
 ```{r}
 #subset using operators (only print rows if the Nutrient column equals P)
-P_data <- growth_data[growth_data$Nutrient == "P", ]
+P_data <- timecourse_noNA[timecourse_noNA$Nutrient == "P", ]
+kable(head(P_data), format = "markdown", align = 'l', booktabs = T )
 ```
+
+Now we want to look at some other examples:
 
 ### grep and grepl
 
@@ -1146,19 +1234,19 @@ In our growth data, we only want to print measurements of our strains.
 
 ```{r}
 #grep return the index value of each matched pattern
-grep("Strain", growth_data$Condition)
+grep("MgC", timecourse_noNA$Condition)
 ```
 
 ```{r}
 #grepl returns a logical output for each indices in the original vector 
 #with "TRUE" representing matched patterns
-grepl("Strain", growth_data$Condition)
+grepl("MgC", timecourse_noNA$Condition)
 ```
 
 Now lets use this to actually filter our data table for a pattern.
 
 ```{r}
-filter_for_value <-growth_data[grepl("Strain", growth_data$Condition),]
+filter_for_value <-timecourse_noNA[grepl("MgC", timecourse_noNA$Condition),]
 
 kable(filter_for_value) %>%
   kable_styling() %>%
@@ -1166,7 +1254,7 @@ kable(filter_for_value) %>%
 
 
 #filter data set based on values that do not match the specified pattern (by using the minus symbol)
-filter_for_not_a_value <- growth_data[-grepl("Strain", growth_data$Condition),]
+filter_for_not_a_value <- timecourse_noNA[-grepl("MgC", timecourse_noNA$Condition),]
 
 kable(filter_for_not_a_value) %>%
   kable_styling() %>%
@@ -1183,7 +1271,8 @@ Other comments:
 Regular expressions are explained in the AWK and General notebook. But just to give an example lets just grep Strains that have a 3 letter number
 
 ```{r}
-filter_3letters <- growth_data[grepl("Strain[0-9][0-9][0-9]", growth_data$Condition),]
+
+filter_3letters <- growth_data[grepl("[0-9][0-9][0-9]", growth_data$Condition),]
 
 #check the structure of our data
 kable(filter_3letters) %>%
@@ -1213,6 +1302,7 @@ filter_3letters_clean$Condition
 ###################################################################################
 
 A lot of helpful information that that was used here was inspired by a more detailed site that can be found here: http://www.learnbymarketing.com/tutorials/linear-regression-in-r/.
+Please take note, that the writer of this tutorial is no statistician ;-) .
 
 ## Summary stats
 ##########################
@@ -1224,22 +1314,24 @@ To do some basic stats we use the nutrient growth data set, which you find in th
 
 ```{r}
 
-#read in our data
-growth_data <- read.table("Input_files/Growth_Data.txt", sep="\t", header=T,  quote = "")
-
 #get the menas of our root length
-mean(growth_data$Rootlength_cm)
+mean(timecourse_noNA$Rootlength)
 
 #return summary stats for the root length (using two different ways to write the syntax)
-summary(growth_data$Rootlength_cm)
+summary(timecourse_noNA$Rootlength)
 ```
 
-We can return the summary stats also for more than one column but for this we have to work with our square brackets again.
+
+We can also run ``summary()`` on our complete dataframe.
 
 ```{r}
-#return summary stats for the root length and shoot fresh weight
-summary(growth_data[, c("Rootlength_cm", "FW_shoot_mg")])
+
+#run summary on all our data
+summary(timecourse_noNA)
+
 ```
+
+This way we do not only get summary stats for our values, but also we get some counts on how many measurements we have for different conditions.
 
 
 ## The table command
@@ -1249,12 +1341,13 @@ The function table builds a contingency table of the counts at each factor level
 
 ```{r}
 #summarize how many measurements we have for each treatment
-table(growth_data$SampleID)
+table(timecourse_noNA$SampleID)
 ```
 
-Here, we see that we have a slightly different number of measurements for each condition. 
-The differences are slight, so we can ignore them, but this might be relevant if we have huge differences for some statistical analyses.
+Here, we see that we have a slightly different number of measurements for each condition and timepoint. 
+For this tutorial we can ignore them, but this might be relevant if we have huge differences for some statistical analyses.
 This approach allows you to for larger datasets to easily check for samples that might be outliers in terms of measurements per sample.
+
 
 ## The ddply command
 ##########################
@@ -1269,10 +1362,10 @@ I.e. we do not want to have the mean for all root lengths but we want to see if 
 library(plyr)
 
 #calculate the mean root length across our Sample IDs
-growth_data_summarized <- ddply(growth_data, .(Nutrient), summarize, RootLength = mean(Rootlength_cm))
+timecourse_noNA_summarized <- ddply(timecourse_noNA, .(Nutrient), summarize, Mean_RootLength = mean(Rootlength))
 
 #view data
-kable(head(growth_data_summarized), format='markdown')
+kable(head(timecourse_noNA_summarized), format='markdown')
 ```
 
 The structure of the command is as follows:
@@ -1283,47 +1376,131 @@ We can also summarize the data combining different conditions (i.e. nutrient and
 
 ```{r}
 #Summarize our data across Nutrients and Conditions
-growth_data_summarized <- ddply(growth_data, .(Nutrient, Condition), summarize, RootLength = mean(Rootlength_cm))
+timecourse_noNA_summarized <- ddply(timecourse_noNA, .(Nutrient, Timepoint, Condition), summarize, Mean_RootLength = mean(Rootlength))
 
 #view data
-kable(growth_data_summarized, format='markdown')
-```
-
-We can also summarize the data for both root length and shoot weight.
-
-```{r}
-#we can summarize more than one thing in one line of code
-growth_data_summarized <- ddply(growth_data, .(Nutrient, Condition), summarize, RootLength = mean(Rootlength_cm), Freshweight = mean(FW_shoot_mg))
-
-#view data
-kable(growth_data_summarized, format='markdown')
+kable(timecourse_noNA_summarized, format='markdown')
 ```
 
 We can also calculate the mean, sd and se in one line of code
 
 ```{r}
 #and we can use even fancier functions (i.e. get the se and sd), check the plyr package for more details
-growth_data_summarized <- ddply(growth_data, .(Nutrient, Condition), summarize, RootLength = mean(Rootlength_cm), sd = sd (Rootlength_cm), se = sd(Rootlength_cm) / sqrt((length(Rootlength_cm))))
+timecourse_noNA_summarized <- ddply(timecourse_noNA, .(Nutrient, Timepoint, Condition), summarize, RootLength = mean(Rootlength), sd = sd (Rootlength), se = sd(Rootlength) / sqrt((length(Rootlength))))
 
 #view data
-kable(growth_data_summarized, format='markdown')
+kable(timecourse_noNA_summarized, format='markdown')
 ```
+
+
+## tidyr
+##########################
+
+Tydir is another package to summarize data but also to transform data. 
+For now we will just discuss the basics to summarize data but we will try to add an extended section on this package later.
+
+You notice here that the syntax is a bit unusual and we use the `` %>%`` symbol (a so-called forward pipe operator).
+This symbol is commonly used in the **dplyr** and **tidyr** packages.
+This function passes the left hand side of the operator to the first argument of the right hand side of the operator. 
+
+In the following example, the a subset of the growth_data data (only 3 columns, not the whole dataframe) gets passed to ``count()``
+
+New functions:
+
+- ``count()`` = A function of the dplyr package. Here, we count the unique protein IDs grouped by BinID and gene (i.e. roughly equivalent to the columns we want to keep)
+- ``summarize()`` creates new data frame into one (or more) rows for each combination of grouping variables; if there are no grouping variables, the output will have a single row summarising all observations in the input. It will contain one column for each grouping variable and one column for each of the summary statistics that you have specified.
+- ``mean()`` = calculate the  arithmetic mean.
+
+```{r}
+
+#read in package
+library(tidyverse)
+
+#count how many measurements we have per conditions
+timecourse_noNA %>% count(Condition, sort = FALSE)
+
+#count how many measurements we have per nutrient and conditions
+timecourse_noNA %>% count(Nutrient, Condition, sort = FALSE)
+
+#get more comprehensive data stats and summarize for the whole dataset
+timecourse_noNA %>% summarise(
+          count = n(),
+          mean_root = mean(Rootlength, na.rm = TRUE))
+
+```
+
+Good things about tydir are:
+
+- it is extremely fast, so is important for dealing with larger datasets
+- we can combine several compands by using the pipe
+
+I.e. below we can see that we first group the input data and then summarized the group data.
+
+```{r}
+
+#get more comprehensive data stats and summarize and grouping for the different conditions
+timecourse_noNA %>% 
+    group_by(Nutrient, Condition) %>%  
+    summarise(
+          count = n(),
+          mean_root = mean(Rootlength, na.rm = TRUE) ,.groups = 'drop')
+
+```
+
+
+We can also do other stats than just calculating the mean: 
+
+
+```{r}
+#get more comprehensive data stats and summarize and grouping for the different conditions
+timecourse_noNA %>% 
+    group_by(Nutrient, Condition) %>%  
+    summarise(
+          count = n(),
+          mean_root = mean(Rootlength, na.rm = TRUE),
+          sd_root = sd(Rootlength),.groups = 'drop')
+
+```
+
+Other useful summary functions:
+
+- mean(x): sum of x divided by the length
+- median(x): 50% of x is above and 50% is below
+
+- sd(x): standard deviation
+- IQR(x): interquartile range (robust equivalent of sd when outliers are present in the data)
+- mad(x): median absolute deviation (robust equivalent of sd when outliers are present in the data)
+
+- min(x): minimum value of x
+- max(x): maximum value of x
+- quantile(x, 0.25): 25% of x is below this value
+
+- first(x): equivalent to x[1]
+- nth(x, 2): equivalent to n<-2; x[n]
+- last(x): equivalent to x[length(x)]
+
+- n(x): the number of element in x
+- sum(!is.na(x)): count non-missing values
+- n_distinct(x): count the number of unique value
+
+- sum(x > 10): count the number of elements where x > 10
+- mean(y == 0): proportion of elements where y = 0
 
 
 ## The unique command
 ##########################
 
-**unique** allows to determine duplicate rows and allows us to subset our data for certain categories.
+``unique()`` allows to determine duplicate rows and allows us to subset our data for certain categories.
 For example, for very large dataframes we often can simplify things.
 
 Here, if we have a lot of treatments and did the experiment a long time ago, we might want to ask for a table that lists the treatments.
 
 ```{r}
 #make unique contig list that still contains info of our bin ID
-mapping_file <- unique(growth_data[,c("SampleID", "Nutrient", "Condition")])
+mapping_file <- unique(timecourse_noNA[,c("SampleID", "Nutrient", "Condition", "Timepoint")])
 
 #view data
-kable((mapping_file), format='markdown')
+kable((head(mapping_file)), format='markdown')
 ```
 
 
@@ -1343,10 +1520,10 @@ First lets build an artificial mapping file that incldues the number of days we 
 ```{r}
 
 #make mapping that contains our basic sample info
-mapping_file <- unique(growth_data[,c("SampleID", "Nutrient", "Condition")])
+mapping_file <- unique(timecourse_noNA[,c("SampleID", "Nutrient", "Condition", "Timepoint")])
 
-#add a new column, where we list the number of days the experiment ran
-mapping_file$Days <- 12
+#add a new column, where we list our experiment ID
+mapping_file$Comment <- "FirstExperiment"
 
 #view data
 kable(head(mapping_file), format='markdown')
@@ -1359,7 +1536,7 @@ Now we can use this mapping file and merge it with our growth data as follows:
 library(plyr)
 
 #merge our mapping file with our growth data
-new_data_frame <- merge(growth_data, mapping_file, by = "SampleID")
+new_data_frame <- merge(timecourse_noNA, mapping_file, by = "SampleID")
 
 #view data
 kable(head(new_data_frame), format='markdown')
@@ -1368,6 +1545,7 @@ kable(head(new_data_frame), format='markdown')
 This now is a good example to check that all went fine and that the new dataframes has the same number of rows (=measurements) compared to the original dataframe.
 
 ```{r}
+
 #control that all went fine
 dim(growth_data)
 dim(new_data_frame)
@@ -1393,10 +1571,10 @@ To do this, we use these two lines of code:
 
 ```{r}
 #make mapping file more simple
-mapping_reduced <- mapping_file[,c("SampleID", "Days")]
+mapping_reduced <- mapping_file[,c("SampleID", "Comment")]
 
 #merge
-new_data_frame <- merge(growth_data, mapping_reduced, by = "SampleID")
+new_data_frame <- merge(timecourse_noNA, mapping_reduced, by = "SampleID")
 kable(head(new_data_frame), format='markdown')
 ```
 
@@ -1405,7 +1583,7 @@ Now, this worked fine but requires a bit more code and we need to create one mor
 We could also combine these two kines of code into one line by subsetting our mapping file INSIDE the merge function as follows:
 
 ```{r}
-new_data_frame <- merge(growth_data, mapping_file[,c("SampleID", "Days")], by = "SampleID")
+new_data_frame <- merge(timecourse_noNA, mapping_file[,c("SampleID", "Comment")], by = "SampleID")
 kable(head(new_data_frame), format='markdown')
 ```
 
@@ -1418,21 +1596,21 @@ We can also add new columns into original table, i.e. if we want to not show the
 Below you can see that if we have numerical data in a column, we can use normal math operators (like +,-,/)
 
 ```{r}
-#convert mg to g and make a new column
-growth_data$FW_shoot_g <- growth_data$FW_shoot_mg/10
-kable(head(growth_data), format='markdown')
+#convert cm to mm
+timecourse_noNA$Rootlength_mm <- timecourse_noNA$Rootlength*10
+kable(head(timecourse_noNA), format='markdown')
 
 #we can also round our data
-growth_data$FW_shoot_g <- round(growth_data$FW_shoot_mg/10, digits = 2)
-kable(head(growth_data), format='markdown')
+timecourse_noNA$Rootlength_mm <- round(timecourse_noNA$Rootlength*10, digits = 1)
+kable(head(timecourse_noNA), format='markdown')
 ```
 
-We can also add (or substract, etc ...) values from different columns. I.e. here we could calculate the ratio from shoot weight to fresh weight.
+We can also add (or substract, etc ...) values from different columns. I.e. here we could calculate the ratios.
 
 ```{r}
 #we can also do math with the values in two columns, i.e. if we want to calculate the ration between root length and fresh weight
-growth_data$ratio <- growth_data$FW_shoot_mg/growth_data$Rootlength_cm
-kable(head(growth_data), format='markdown')
+timecourse_noNA$ratio <- timecourse_noNA$Rootlength/timecourse_noNA$Rootlength_mm
+kable(head(timecourse_noNA), format='markdown')
 
 ```
 
@@ -1446,27 +1624,34 @@ Suppose now we want to estimate the mean root length for each growth condition. 
 
 ```{r}
 #index = factors we want to select
-tapply(X = growth_data$Rootlength_cm, INDEX = growth_data$Nutrient, FUN = mean,na.rm = TRUE)
+tapply(X = timecourse_noNA$Rootlength, INDEX = timecourse_noNA$Nutrient, FUN = mean,na.rm = TRUE)
 
 #same but for two-way tables (this is not so useful here, but might be handy when you have different conditions for the same organism or a timecourse)
-tapply(growth_data$Rootlength_cm, INDEX = list(growth_data$Nutrient, growth_data$Condition),FUN = mean, na.rm = TRUE)
+tapply(timecourse_noNA$Rootlength, INDEX = list(timecourse_noNA$Nutrient, timecourse_noNA$Condition),FUN = mean, na.rm = TRUE)
 ```
 
 
 ## Linear models 
 ##########################
 
-It is very simple to investigate linear relationships amongst variables in R. We want to estimate how a quantitative dependent variable changes according to the levels of one or more categorical independent variables. In the command below, the linear relationship between Rootlength_cm (the **dependent** variable, i.e. the one we’re trying to predict) and FW_shoot_mg (the **independent** variable or the predictor) is calculated.
+It is very simple to investigate linear relationships amongst variables in R. We want to estimate how a quantitative dependent variable changes according to the levels of one or more categorical independent variables. In the command below, the linear relationship between Rootlength (the **dependent** variable, i.e. the one we’re trying to predict) and FW_shoot_mg (the **independent** variable or the predictor) is calculated.
 
 We need to use the function summary to see the results of that command; coef extracts the best-fit coefficients, anova performs an analysis of variance; there are many other extractor functions.
 
+In this case lets work with the data were we do not have to deal with the different time points to simplify things.
+
 ```{r}
+
+#read in data were we have several measurements
+growth_data <- read.table("Input_files/Growth_Data.txt", sep="\t", header=T, fill=TRUE, quote = "")
+
 #is there a correlation between freshweight and root length?
-linearmodel <- lm(Rootlength_cm ~ FW_shoot_mg, data = growth_data)
+linearmodel <- lm(Rootlength ~ FW_shoot_mg, data = growth_data)
 linearmodel
 
 #let's extract the entire t-table
 summary(linearmodel) 
+
 ```
 
 Here one of the values is the model p-Value (bottom last line) and the p-Value of individual predictor variables (extreme right column under ‘Coefficients’). The p-Values are very important because, we can consider a linear model to be statistically significant only when both these p-Values are less that the pre-determined statistical significance level, which is ideally 0.05. This is visually interpreted by the significance stars at the end of the row. The more the stars beside the variable’s p-Value, the more significant the variable.
@@ -1495,7 +1680,7 @@ coef(summary(linearmodel))
 anova(linearmodel)
 
 #plot add the best line to a plot
-with(growth_data, plot(Rootlength_cm ~ FW_shoot_mg, col = 2))
+with(growth_data, plot(Rootlength ~ FW_shoot_mg, col = 2))
 abline(linearmodel)
 ```
 
@@ -1523,10 +1708,10 @@ simple.fit <- linearmodel
 
 layout(matrix(c(1,1,2,3),2,2,byrow=T))
 
-#Rootlength_cm x Residuals Plot
-plot(simple.fit$resid~growth_data$Rootlength_cm[order(growth_data$Rootlength_cm)],
- main="Rootlength_cm x Residuals\nfor Simple Regression",
- xlab="Marketing Rootlength_cm", ylab="Residuals")
+#Rootlength x Residuals Plot
+plot(simple.fit$resid~growth_data$Rootlength[order(growth_data$Rootlength)],
+ main="Rootlength x Residuals\nfor Simple Regression",
+ xlab="Marketing Rootlength", ylab="Residuals")
 abline(h=0,lty=2)
 
 #Histogram of Residuals
@@ -1557,7 +1742,7 @@ There are different ways to visualize this, one example is ggdensity of the ggpu
 library("ggpubr")
 
 #is the data for my different variables normaly distributed
-ggdensity(growth_data$Rootlength_cm)
+ggdensity(growth_data$Rootlength)
 ```
 
 We see nicely that we have two tails that likely represent the two nutrient conditions. To test this, we can simply subset the data as we have done before.
@@ -1567,7 +1752,7 @@ We see nicely that we have two tails that likely represent the two nutrient cond
 noP_data <- growth_data[growth_data$Nutrient=="noP",]
 
 #plot
-ggdensity(noP_data$Rootlength_cm)
+ggdensity(noP_data$Rootlength)
 ```
 
 No we see that indeed the tool tails we see are seem to be due to our two nutrient conditions.
@@ -1578,10 +1763,10 @@ Another way to represent data is in  a Q-Q plot: Q-Q plot (or quantile-quantile 
 
 ```{r}
 #plot all data
-ggqqplot(growth_data$Rootlength_cm)
+ggqqplot(growth_data$Rootlength)
 
 #only plot low P data
-ggqqplot(noP_data$Rootlength_cm)
+ggqqplot(noP_data$Rootlength)
 ```
 
 Again, here we see that our data for the indivdual growth conditions fit quite nicely into normal distribution.
@@ -1590,10 +1775,10 @@ Again, here we see that our data for the indivdual growth conditions fit quite n
 
 ```{r}
 #for all data
-shapiro.test(growth_data$Rootlength_cm)
+shapiro.test(growth_data$Rootlength)
 
 #for noP only
-shapiro.test(noP_data$Rootlength_cm)
+shapiro.test(noP_data$Rootlength)
 ```
 
 The shapiro.test tests the NULL hypothesis that the samples came from a Normal distribution. This means that if your p-value <= 0.05, then you would reject the NULL hypothesis that the samples came from a normal distribution.
@@ -1604,7 +1789,7 @@ Notice: Shapiro works only for sample sizes between 3-5000 numbers since when yo
 
 ```{r}
 library(nortest)
-ad.test(noP_data$Rootlength_cm)
+ad.test(noP_data$Rootlength)
 ```
 
 
@@ -1619,11 +1804,11 @@ When we visuallize the data, we see that there is a difference between the nutri
 #lets visually compare our data with ggpubr again
 library("ggpubr")
 
-ggboxplot(growth_data, x = "Condition", y = "Rootlength_cm", color = "Nutrient",
+ggboxplot(growth_data, x = "Condition", y = "Rootlength", color = "Nutrient",
           palette = c("#00AFBB", "#E7B800"))
 
 # We want to know whether root length depends on nutrient treatment
-aov <- aov(Rootlength_cm ~ Nutrient, data = growth_data)
+aov <- aov(Rootlength ~ Nutrient, data = growth_data)
 summary(aov)
 ```
 
@@ -1631,7 +1816,7 @@ Here, we see that there are significant differences based on our nutrient treatm
 
 ```{r}
 # We want to know if root length depends on condition and nutrient
-aov <- aov(Rootlength_cm ~ Nutrient + Condition, data = growth_data)
+aov <- aov(Rootlength ~ Nutrient + Condition, data = growth_data)
 summary(aov)
 ```
 
@@ -1644,8 +1829,8 @@ Not the above fitted model is called additive model. It makes an assumption that
 # Two-way ANOVA with interaction effect
 
 # These two calls are equivalent
-aov <- aov(Rootlength_cm ~ Nutrient * Condition, data = growth_data)
-aov <- aov(Rootlength_cm ~ Nutrient + Condition + Nutrient:Condition, data = growth_data)
+aov <- aov(Rootlength ~ Nutrient * Condition, data = growth_data)
+aov <- aov(Rootlength ~ Nutrient + Condition + Nutrient:Condition, data = growth_data)
 
 #summarize the aov
 summary(aov)
@@ -1664,7 +1849,7 @@ As the ANOVA test is significant, we can compute Tukey HSD (Tukey Honest Signifi
 
 ```{r}
 #test with anova
-aov <- aov(Rootlength_cm ~ Nutrient * Condition, data = growth_data)
+aov <- aov(Rootlength ~ Nutrient * Condition, data = growth_data)
 
 #run tukey
 TukeyHSD(aov)
@@ -1682,7 +1867,7 @@ library(agricolae)
 noP_data <- growth_data[growth_data$Nutrient == "noP", ]
 
 #run an anova
-aov_noP <- aov(Rootlength_cm ~ Condition, data = noP_data)
+aov_noP <- aov(Rootlength ~ Condition, data = noP_data)
 
 #run test
 HSD.test(aov_noP,"Condition", group=TRUE,console=TRUE)
@@ -1698,7 +1883,7 @@ plot(aov, 1)
 
 #Use the Levene’s test to check the homogeneity of variances. 
 library(car)
-leveneTest(Rootlength_cm ~ Nutrient * Condition, data = growth_data)
+leveneTest(Rootlength ~ Nutrient * Condition, data = growth_data)
 ```
 
 From the output above we can see that the p-value is not less than the significance level of 0.05. This means that there is no evidence to suggest that the variance across groups is statistically significantly different. Therefore, we can assume the homogeneity of variances in the different treatment groups.
@@ -1825,7 +2010,7 @@ This of course is a very simplistic example. But if-else statements can be usefu
 ```{r}
 
 #apply ifelse
-growth_data$category <- ifelse(growth_data$Rootlength_cm<=10.0, "small", "large")
+growth_data$category <- ifelse(growth_data$Rootlength<=10.0, "small", "large")
 
 #check the structure of our data
 kable(growth_data) %>%
@@ -1837,7 +2022,7 @@ kable(growth_data) %>%
 Here, we:
 
 - Create a new column, with the name category
-- If a value in our Rootlength_cm column is equal to or smaller than 10, we want to say this category is small.
+- If a value in our Rootlength column is equal to or smaller than 10, we want to say this category is small.
 - If that is not the case, we want to say it is large
 
 So the function works like this:
@@ -1850,7 +2035,7 @@ I.e. we only send things in the big category if the roots are longer than 10cm A
 ```{r}
 
 #apply ifelse
-growth_data$category <- ifelse(growth_data$Rootlength_cm>10 & growth_data$FW_shoot_mg>15, "large", "small")
+growth_data$category <- ifelse(growth_data$Rootlength>10 & growth_data$FW_shoot_mg>15, "large", "small")
 
 #check the structure of our data
 kable(growth_data) %>%
@@ -1874,12 +2059,35 @@ kable(growth_data) %>%
 The examples below are part of base R, i.e. we can plot without using any packages.
 However, there are some nice packages that let you control a lot of parameters, which are good to learn for more sophisticates plots.
 
+Plotting in base R is simple, we just need to define, what we plot against the x- and y-axis.
+
 ```{r}
-x <- 6:24
-y <- c(75, 90, 140, 120, 100, 85, 82, 100, 140, 130, 115, 100, 90, 80,110, 130, 115, 100, 85)
+x <- growth_data$Rootlength
+y <- growth_data$FW_shoot_mg
 
 plot(x, y)
 ```
+
+Now, lets work with our time course data to draw some line plots. I.e. lineplots are ideal if we have measurements over time. 
+
+Lets first summarize our time course data to make it easier to plot.
+
+```{r}
+
+#first filter to only print P data, then summarize the data by condition and timepoint and calculate the mean
+timecourse_summary <- timecourse_noNA %>% 
+    filter(Nutrient == "P")  %>% 
+    group_by(Condition, Timepoint) %>%  
+    summarise(mean_root = mean(Rootlength), .groups = 'drop')
+
+kable(head(timecourse_summary), format='markdown')
+
+#split the data into our two categories
+timecourse_summary_Control <- timecourse_summary[timecourse_summary$Condition == 'MgCl',]
+timecourse_summary_350 <- timecourse_summary[timecourse_summary$Condition == '350',]
+
+```
+
 
 Useful comments:
 
@@ -1892,26 +2100,31 @@ Useful comments:
 * col = hexadecimal or string, colour of the points/lines.
 
 ```{r}
-x <- 6:24
-y <- c(75, 90, 140, 120, 100, 85, 82, 100, 140, 130, 115, 100, 90, 80,110, 130, 115, 100, 85)
+x <- 0:5
+y <- timecourse_summary_Control$mean_root
 
-plot(x, y, type = "b", pch = 19, xlab = "Time of the day", ylab = "mg/dL",col = "#7700BB", main = "NH3 levels")
+plot(x, y, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", main = "Growth measurements")
 ```
 
-plot() always overwrites the content for the current graphics window. To add elements to an existing plot,
-one can use points, lines, abline, text, … We can also add a legend to the plot. In the previous graph of
-a healthy person, let us add the blood sugar levels of a person suffering from diabetes.
+plot() always overwrites the content for the current graphics window. 
+
+To add elements to an existing plot, one can use points, lines, abline, text, …
+We can also add a legend to the plot. 
+
+In the previous graph eith out growth measurements let us add the root growth of our microbe treatment.
 
 ```{r}
-x <- 6:24
-y <- c(75, 90, 140, 120, 100, 85, 82, 100, 140, 130, 115, 100, 90, 80,110, 130, 115, 100, 85)
-z <- c(120, 280, 240, 200, 170, 130, 270, 240, 200, 170, 150, 130, 120,280, 250, 230, 200, 170, 155)
+x <- 0:5
+y <- timecourse_summary_Control$mean_root
+z <- timecourse_summary_350$mean_root
 
-plot(x, y, type = "b", pch = 19, xlab = "Time of the day", ylab = "mg/dL",col = "#7700BB", ylim = c(0, 340), main = "NH3 levels")
+plot(x, y, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", ylim = c(0, 15), main = "Growth measurements")
 lines(x, z, type = "b", col = "#5555DD")
-legend("topright", c("N_depleted", "control"), col = c("#7700BB", "#5555DD"),pch = c(19, 1))
+legend("topright", c("control", "microbe"), col = c("#7700BB", "#5555DD"),pch = c(19, 1))
 
 ```
+
+We can see nicely, that our roots grow longer past the 3rd timepoint.
 
 To change graphical parameters globally you can use par. R allows for n × m figures in a single page, by
 adjusting the parameter mfrow:
@@ -1941,21 +2154,23 @@ NH3 levels of the different conditions, one with the control levels of the N_dep
 Respect the colours, and point shapes used previously. Add a legend, title, xlab and ylab to all plots.
 
 ```{r, eval=F}
-x <- 6:24
-N_depleted <- c(75, 90, 140, 120, 100, 85, 82, 100, 140, 130, 115, 100, 90, 80,110, 130, 115, 100, 85)
-control <- c(120, 280, 240, 200, 170, 130, 270, 240, 200, 170, 150, 130, 120,280, 250, 230, 200, 170, 155)
+
+x <- 0:5
+control <- timecourse_summary_Control$mean_root
+Microbe <- timecourse_summary_350$mean_root
+
 
 png("Output_examples/filename2.png", width = 240, height = 480)
 par(mfrow = c(3, 1)) 
-plot(x, N_depleted, type = "b", pch = 19, xlab = "Time of the day", ylab = "mg/dL",col = "#7700BB", ylim = c(0, 340), main = "Blood glucose levels")
-legend("topright", c("N_depleted"), col = c("#7700BB"),pch = c(19, 1))
 
-plot(x, control, type = "b", pch = 19, xlab = "Time of the day", ylab = "mg/dL",col = "#5555DD", ylim = c(0, 340), main = "Blood glucose levels")
-legend("topright", c("control"), col = c("#5555DD"),pch = c(19, 1))
+plot(x, control, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", main = "Growth measurements")
 
-plot(x, N_depleted, type = "b", pch = 19, xlab = "Time of the day", ylab = "mg/dL",col = "#7700BB", ylim = c(0, 340), main = "Blood glucose levels")
-lines(x, control, type = "b", col = "#5555DD")
-legend("topright", c("N_depleted", "control"), col = c("#7700BB", "#5555DD"),pch = c(19, 1))
+plot(x, Microbe, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#5555DD", main = "Growth measurements")
+
+plot(x, control, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", ylim = c(0, 15), main = "Growth measurements")
+lines(x, Microbe, type = "b", col = "#5555DD")
+legend("topright", c("control", "microbe"), col = c("#7700BB", "#5555DD"),pch = c(19, 1))
+
 dev.off()
 
 ```
@@ -1970,6 +2185,8 @@ With the par( ) function, you can include the option mfrow=c(nrows, ncols) to cr
 - mfrow = c(3, 1) --> we have 3 plots distributed across 3 rows and one column
 - par(mai = c(2, 0.82, 0.82, 0.42)) --> sets the bottom, left, top and right margins respectively of the plot region in number of lines of text. If we change the margins it is recommended to reset them to the default after plotting with ``par(mai = c(1.02, 0.82, 0.82, 0.42))``. An example is given below.
 
+
+
 ## Histograms
 ##########################
 
@@ -1983,7 +2200,7 @@ in how to make a density plot, look at the help page of density.
 For example, we can plot the distribution of our root length measurements across our data.
 
 ```{r}
-hist(growth_data[, "Rootlength_cm"], cex = 0.6, main = "Data distribution", breaks = 10, density = 100, col = "lightblue", border = "darkblue", xlab = "Rootlength_cm", labels =T)
+hist(growth_data[, "Rootlength"], cex = 0.6, main = "Data distribution", breaks = 10, density = 100, col = "lightblue", border = "darkblue", xlab = "Rootlength", labels =T)
 ```
 
 ## Boxplots
@@ -2005,13 +2222,13 @@ par(mfrow = c(1, 3))
 par(mai = c(2, 0.82, 0.82, 0.42))
 
 # all data
-boxplot(growth_data$Rootlength_cm, cex = 0.8,  ylab = "Root length (cm)")
+boxplot(growth_data$Rootlength, cex = 0.8,  ylab = "Root length (cm)")
 
 # data by nutrient condition
-boxplot(growth_data$Rootlength_cm ~ growth_data$Nutrient, las = 2, cex = 0.8, ylab = "Root length (cm)")
+boxplot(growth_data$Rootlength ~ growth_data$Nutrient, las = 2, cex = 0.8, ylab = "Root length (cm)")
 
 # data by nutrient and growth condition
-boxplot(growth_data$Rootlength_cm ~ growth_data$Nutrient * growth_data$Condition, las = 2, cex = 0.8, ylab = "Root length (cm)")
+boxplot(growth_data$Rootlength ~ growth_data$Nutrient * growth_data$Condition, las = 2, cex = 0.8, ylab = "Root length (cm)")
 
 # set the plotting parameters back to original values
 par(mai = c(1.02, 0.82, 0.82, 0.42))
@@ -2035,7 +2252,7 @@ One important difference to basic plots is that argument can be given in separat
 ```{r}
 #make a bargraph
 myplot <-
-  ggplot(growth_data, aes(x =Nutrient, y = Rootlength_cm)) +  #here we provide the dimensions of our plot
+  ggplot(growth_data, aes(x =Nutrient, y = Rootlength)) +  #here we provide the dimensions of our plot
   geom_bar(stat="identity")                                   #here, we say what kind of plot we want 
 
 myplot
@@ -2046,14 +2263,14 @@ We see that the default behaviour is to sum everything, which is not what we wan
 ```{r}
 #make a boxplot instead of bargrpah
 myplot <-
-  ggplot(growth_data, aes(x =Nutrient, y = Rootlength_cm)) +  
+  ggplot(growth_data, aes(x =Nutrient, y = Rootlength)) +  
   geom_boxplot()                                   
 
 myplot
 
 #do a histogram
 myplot <-
-  ggplot(growth_data, aes(Rootlength_cm)) +  
+  ggplot(growth_data, aes(Rootlength)) +  
   geom_histogram()                                   
 
 myplot
@@ -2065,7 +2282,7 @@ Another useful feature is to add colors by groupings, i.e. nutrient conditions, 
 
 ```{r}
 myplot <-
-  ggplot(growth_data, aes(x =Nutrient, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =Nutrient, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()                                   
 
 myplot
@@ -2077,7 +2294,7 @@ By default the basic design of a ggplot2 is not ready for publication but we can
 
 ```{r}
 myplot <-
-  ggplot(growth_data, aes(x =Nutrient, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =Nutrient, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()  +                                 
   scale_fill_manual(values=c("black", "grey")) +                                          #add some other colors
   scale_y_continuous(expand = c(0, 0), limits = c(0, 15)) +                               #make the axis start at 0 
@@ -2102,7 +2319,7 @@ growth_data$Nutrient2 <-  factor(growth_data$Nutrient, levels = c("P", "noP"))
 
 #plot in our new order
 myplot <-
-  ggplot(growth_data, aes(x =Nutrient2, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =Nutrient2, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()
 
 myplot
@@ -2116,7 +2333,7 @@ With ``pdf()`` we tell R that we want to print something to our computer. Inside
 ```{r}
 #lets first generate two plots
 myplot_root <-
-  ggplot(growth_data, aes(x =Nutrient2, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =Nutrient2, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()
 
 myplot_shoot <-
@@ -2142,7 +2359,7 @@ If we have multiple conditions, i.e. nutrient conditions and other treatments th
 
 ```{r}
 #pdf("Plot_root_length.pdf", width=3, height=3, family  = "Times")
-  ggplot(growth_data, aes(x =SampleID, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =SampleID, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()
 #dev.off()
 ```
@@ -2174,7 +2391,7 @@ growth_data$SampleID2 <-  factor(growth_data$SampleID, levels = as.character(map
 head(growth_data)
 
 #plot (for now lets do this side by side)
-  ggplot(growth_data, aes(x =SampleID2, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =SampleID2, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()
 
 ```
@@ -2187,7 +2404,7 @@ Luckily we have learned before how we can use ddply to create such a table again
 
 ```{r}
 #summarize
-growth_data_summarized <- ddply(growth_data, .(SampleID, Nutrient), summarize, RootLength = mean(Rootlength_cm), sd = sd (Rootlength_cm), se = sd(Rootlength_cm) / sqrt((length(Rootlength_cm))))
+growth_data_summarized <- ddply(growth_data, .(SampleID, Nutrient), summarize, RootLength = mean(Rootlength), sd = sd (Rootlength), se = sd(Rootlength) / sqrt((length(Rootlength))))
 
 #order levels
 growth_data_summarized$SampleID2 <-  factor(growth_data_summarized$SampleID, levels = as.character(mapping_file$SampleID)) 
@@ -2212,7 +2429,7 @@ Options:
 
 ```{r}
 #plot horizontal
-  ggplot(growth_data, aes(x =SampleID2, y = Rootlength_cm, fill = Nutrient)) +  
+  ggplot(growth_data, aes(x =SampleID2, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot() +
   facet_wrap(. ~ Nutrient, scales = "free", ncol = 2)
 ```
