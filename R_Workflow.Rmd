@@ -44,9 +44,31 @@ This tutorial will work with example data for:
 
 **(A) Growth data**
 
-- The file **Growth_Data.txt** contains measurements for root length and shoot gfresh weight of Arabidopsis under different growth conditions. The file **Timecourse.txt** contains measurements for root length of Arabidopsis under different growth conditions and for 5 different timepoints. Plants were grown under normal phosphorus and low P conditions. Next to control (MgCL) treatments plants were also inoculated with different strains of rhizobia to test their effect on plant growth and whether that effect depends on nutrient status. For simplicity only 1 biological experiment with 7-10 individual measurements per treatment is included.
+We have two data files that work with a similar experimental setup:
+
+1. **Growth_Data.txt**
+
+We are doing plant growth experiments and treat our plants with different microbes wondering if any affects plant growth in a postive way.
+This file contains measurements of root length and shoot fresh weight for plants grown under control treatments (MgCL) or when treating with 4 different bacteria. For simplicity only 1 biological experiment with 7-10 individual measurements per treatment is included.
+
+2. **Timecourse.txt** 
+
+We found positive effects for some of the strains tested above and now we want to know how long it takes for this effect to appear.
+
+So this data has root length measurements for plants under control conditions and treated with one microbe (350) at 5 different timepoints. Something unique with this dataframe is that we have empty cells (NAs) and we need to deal with them as some R functions od not like empty cells.
+
+
+I hope this example is simple enough that you can see how to apply the code for your own data, as instead of growth data we might have data that looks very similar i.e.
+
+- cell counts for microbes under different treatments
+- microbial abundances across different sites
+- measurements of nutrients across different sites
+- ...
+
+Let's have a look at the data first (we will care about the code later):
 
 ```{r, include=TRUE,  eval=TRUE, echo=FALSE, warning=FALSE}
+
 #read in data
 growth_data <- read.table("Input_files/Growth_Data.txt", sep="\t", header=T,  quote = "")
 
@@ -57,14 +79,10 @@ kable(growth_data) %>%
 
 ```
 
-**(B) Basic genome stats**
-
-- **GenomeInfo.txt** includes basic genome stats to summarize genome characteristics for 12 genomes. The file contains information for each protein that was annotated, such as the prokka annotation, on which contig it was found, how long that contig is, to what genome the contig belongs and the GC content of that bin. We stored a lot of information in that one file but we can then see different ways to parse our data.
-
-Notice, the layout for these file is generally useful and one can easily imagine growth data in the same format (and can run the code very similar as the examples given here). For this script we will only play with the first dataset but the second can be run for testing.
+The timecourse data looks the same, we just have an extra column for the different timepoints and we only have measurements for the root length.
 
 
-**(C) Annotation data**
+**(B) Annotation data**
 
 This file is specific to the output of the Spang_team annotation pipeline but this workflow can be used for any type of categorical data one wants to summarize
 
@@ -83,6 +101,18 @@ For this to work we have some additional files to make our job easier:
 - **Genes_of_interest** = a list of genes we are interested in and that we want to plot in a heatmap
 - **ar14_arCOGdef19.txt** = metadata for the arCOG annotations
 - **Metabolism_Table_KO_Apr2020.txt** = metadata for KOs and sorted by pathways
+
+The annotation table looks like this:
+
+```{r}
+
+#read in data
+annotation_data <- read.table("Input_files/UAP2_Annotation_table_u.txt", sep="\t", header=T,  quote = "")
+
+#check the structure of our data
+kable(head(annotation_data), format='markdown')
+
+```
 
 
 **Since R is in active development = write down what version you are using for your manuscripts and ideal provide the session info as a readme**
@@ -499,18 +529,19 @@ General notice:
 
 #read in data
 timecourse <- read.table("Input_files/Timecourse.txt", sep="\t", header=T,  quote = "")
+growth_data <- read.table("Input_files/Growth_Data.txt", sep="\t", header=T,  quote = "")
 
 #check the first few lines of our data
-kable(head(timecourse), format='markdown')
+kable(head(growth_data), format='markdown')
 
 #check the dimensions of our data
-dim(timecourse)
+dim(growth_data)
 
 #check the column names
-colnames(timecourse)
+colnames(growth_data)
 
 #check the row names
-rownames(timecourse)
+rownames(growth_data)
 
 ```
 
@@ -529,7 +560,7 @@ Now, if we would have modified the table we might want to store it on your compu
 Notice, we always start from the location we set as working directory. 
 
 ```{r}
-write.table(timecourse, "Output_examples/timecourse_changed.txt",  sep = "\t", row.names = T, quote =F)
+write.table(growth_data, "Output_examples/growth_data_changed.txt",  sep = "\t", row.names = T, quote =F)
 ```
 
 - sep --> we define what delimiter we want to use
@@ -811,8 +842,7 @@ our_list$strain
 our_list[["strain"]]
 ```
 
-In the last example we use the ``$`` dollar symbol to extract data, i.e. to extract variables in a dataset (a matrix, list, dataframe).
-I.e. above the data we want to access is 'our_list' and the variable we want to extract is the strain.
+In the last example we use the ``$`` dollar symbol to extract data, i.e. to extract variables in a dataset (a matrix, list, dataframe). I.e. above the data we want to access is 'our_list' and the variable we want to extract is the strain.
 
 
 ## Dataframes
@@ -848,25 +878,25 @@ The growth data that we have read into R will be used to explain how dataframes 
 
 ```{r}
 #view our table
-kable(head(timecourse), format='markdown')
+kable(head(growth_data), format='markdown')
 
 #check how many rows and columns our data has
-dim(timecourse)
+dim(growth_data)
 
 #extract the data from the 2nd row
-timecourse[2,]
+growth_data[2,]
 
 #extract the first three columns
-head(timecourse[,1:3])
+head(growth_data[,1:3])
 
 #extract a column of our data using the column name
-head(timecourse$Timepoint)
+head(growth_data$Condition)
 
 #print our headers
-colnames(timecourse)
+colnames(growth_data)
 
 #get the dimensions
-dim(timecourse)
+dim(growth_data)
 
 ```
 
@@ -881,10 +911,10 @@ Below is a very basic way to add a new column (we name it newColumn) and fill al
 ```{r}
 
 #expand a dataframe, functions data.frame or cbind (or see below)
-timecourse$newColumn <- "comment"
+growth_data$newColumn <- "comment"
 
 #check if that worked
-kable(head(timecourse), format='markdown')
+kable(head(growth_data), format='markdown')
 
 ```
 
@@ -902,10 +932,10 @@ If we read in our own data, we should check as what type of class our table is s
 
 ```{r}
 #check what kind of data we have:
-class(timecourse)
+class(growth_data)
 
 #check how are different parts of our data stored?
-str(timecourse)
+str(growth_data)
 ```
 
 We see that
@@ -1048,14 +1078,18 @@ Notice, that here we use a similar syntax compared to before. Now we do
 
 ### Replacing NAs in our dataframe
 
-If we check our example dataframe, i.e. row 30, we will see that we have NAs.
-Le's remove them from our dataframe for all further analyses. 
+Remember, in the beginning we said that their are NAs in our timecourse data. Let's have a look at this data, i.e. row 30, we will see that we have NAs.
+
+Next, we want to remove all rows that have no values. 
 
 
 ```{r}
 
 #check for NAs
 timecourse[30,]
+
+#check for NAs across a full column
+sum(is.na(timecourse$Rootlength))
 
 #remove rows that contain NAs
 timecourse_noNA <- timecourse[!is.na(timecourse$Rootlength), ]
@@ -1162,18 +1196,18 @@ kable(table2, format = "markdown",  align = 'l', booktabs = T,
 (1==1& 1>2) | 5<6
 
 #only print data for the normal P conditions
-P_data <- timecourse_noNA[timecourse_noNA$Nutrient == "P", ]
+P_data <- growth_data[growth_data$Nutrient == "P", ]
 
 #test that all went ok
-dim(timecourse_noNA)
+dim(growth_data)
 dim(P_data)
 
 #we can also subset our data by numbers, i.e. only keep rows were roots are longer than 5cm
-growth_data_10cm <- timecourse_noNA[timecourse_noNA$Rootlength > 5, ]
+growth_data_10cm <- growth_data[growth_data$Rootlength > 5, ]
 dim(growth_data_10cm)
 
 #instead of keeping rows with roots longer than 5cm we can also remove them using *!*
-growth_data_no10cm <- timecourse_noNA[!timecourse_noNA$Rootlength > 5, ]
+growth_data_no10cm <- growth_data[!growth_data$Rootlength > 5, ]
 dim(growth_data_no10cm)
 ```
 
@@ -1208,14 +1242,14 @@ We already have seen important ways to subset data:
 
 ```{r}
 #subsetting rows and columns using the index
-timecourse_noNA[1:3,2:4]
+growth_data[1:3,2:4]
 ```
 
 2. Use of operators
 
 ```{r}
 #subset using operators (only print rows if the Nutrient column equals P)
-P_data <- timecourse_noNA[timecourse_noNA$Nutrient == "P", ]
+P_data <- growth_data[growth_data$Nutrient == "P", ]
 kable(head(P_data), format = "markdown", align = 'l', booktabs = T )
 ```
 
@@ -1234,13 +1268,13 @@ In our growth data, we only want to print measurements of our strains.
 
 ```{r}
 #grep return the index value of each matched pattern
-grep("MgC", timecourse_noNA$Condition)
+grep("MgCl", growth_data$Condition)
 ```
 
 ```{r}
 #grepl returns a logical output for each indices in the original vector 
 #with "TRUE" representing matched patterns
-grepl("MgC", timecourse_noNA$Condition)
+grepl("Strain", growth_data$Condition)
 ```
 
 Now lets use this to actually filter our data table for a pattern.
@@ -1315,10 +1349,20 @@ To do some basic stats we use the nutrient growth data set, which you find in th
 ```{r}
 
 #get the menas of our root length
-mean(timecourse_noNA$Rootlength)
+mean(growth_data$Rootlength)
+
+#return summary stats for the root length
+summary(growth_data$Rootlength)
+
+```
+
+We can also summarize data of several columns
+
+```{r}
 
 #return summary stats for the root length (using two different ways to write the syntax)
-summary(timecourse_noNA$Rootlength)
+summary(growth_data[,c("Rootlength", "FW_shoot_mg")])
+
 ```
 
 
@@ -1327,7 +1371,7 @@ We can also run ``summary()`` on our complete dataframe.
 ```{r}
 
 #run summary on all our data
-summary(timecourse_noNA)
+summary(growth_data)
 
 ```
 
@@ -1341,7 +1385,7 @@ The function table builds a contingency table of the counts at each factor level
 
 ```{r}
 #summarize how many measurements we have for each treatment
-table(timecourse_noNA$SampleID)
+table(growth_data$SampleID)
 ```
 
 Here, we see that we have a slightly different number of measurements for each condition and timepoint. 
@@ -1362,10 +1406,10 @@ I.e. we do not want to have the mean for all root lengths but we want to see if 
 library(plyr)
 
 #calculate the mean root length across our Sample IDs
-timecourse_noNA_summarized <- ddply(timecourse_noNA, .(Nutrient), summarize, Mean_RootLength = mean(Rootlength))
+growth_data_summarized <- ddply(growth_data, .(Nutrient), summarize, Mean_RootLength = mean(Rootlength))
 
 #view data
-kable(head(timecourse_noNA_summarized), format='markdown')
+kable(head(growth_data_summarized), format='markdown')
 ```
 
 The structure of the command is as follows:
@@ -1376,20 +1420,21 @@ We can also summarize the data combining different conditions (i.e. nutrient and
 
 ```{r}
 #Summarize our data across Nutrients and Conditions
-timecourse_noNA_summarized <- ddply(timecourse_noNA, .(Nutrient, Timepoint, Condition), summarize, Mean_RootLength = mean(Rootlength))
+growth_data_summarized <- ddply(growth_data, .(Nutrient, Condition), summarize, Mean_RootLength = mean(Rootlength))
 
 #view data
-kable(timecourse_noNA_summarized, format='markdown')
+kable(growth_data_summarized, format='markdown')
+
 ```
 
 We can also calculate the mean, sd and se in one line of code
 
 ```{r}
 #and we can use even fancier functions (i.e. get the se and sd), check the plyr package for more details
-timecourse_noNA_summarized <- ddply(timecourse_noNA, .(Nutrient, Timepoint, Condition), summarize, RootLength = mean(Rootlength), sd = sd (Rootlength), se = sd(Rootlength) / sqrt((length(Rootlength))))
+growth_data_summarized <- ddply(growth_data, .(Nutrient, Condition), summarize, RootLength = mean(Rootlength), sd = sd (Rootlength), se = sd(Rootlength) / sqrt((length(Rootlength))))
 
 #view data
-kable(timecourse_noNA_summarized, format='markdown')
+kable(growth_data_summarized, format='markdown')
 ```
 
 
@@ -1417,13 +1462,13 @@ New functions:
 library(tidyverse)
 
 #count how many measurements we have per conditions
-timecourse_noNA %>% count(Condition, sort = FALSE)
+growth_data %>% count(Condition, sort = FALSE)
 
 #count how many measurements we have per nutrient and conditions
-timecourse_noNA %>% count(Nutrient, Condition, sort = FALSE)
+growth_data %>% count(Nutrient, Condition, sort = FALSE)
 
 #get more comprehensive data stats and summarize for the whole dataset
-timecourse_noNA %>% summarise(
+growth_data %>% summarise(
           count = n(),
           mean_root = mean(Rootlength, na.rm = TRUE))
 
@@ -1439,7 +1484,7 @@ I.e. below we can see that we first group the input data and then summarized the
 ```{r}
 
 #get more comprehensive data stats and summarize and grouping for the different conditions
-timecourse_noNA %>% 
+growth_data %>% 
     group_by(Nutrient, Condition) %>%  
     summarise(
           count = n(),
@@ -1453,7 +1498,7 @@ We can also do other stats than just calculating the mean:
 
 ```{r}
 #get more comprehensive data stats and summarize and grouping for the different conditions
-timecourse_noNA %>% 
+growth_data %>% 
     group_by(Nutrient, Condition) %>%  
     summarise(
           count = n(),
@@ -1497,7 +1542,7 @@ Here, if we have a lot of treatments and did the experiment a long time ago, we 
 
 ```{r}
 #make unique contig list that still contains info of our bin ID
-mapping_file <- unique(timecourse_noNA[,c("SampleID", "Nutrient", "Condition", "Timepoint")])
+mapping_file <- unique(growth_data[,c("SampleID", "Nutrient", "Condition")])
 
 #view data
 kable((head(mapping_file)), format='markdown')
@@ -1520,7 +1565,7 @@ First lets build an artificial mapping file that incldues the number of days we 
 ```{r}
 
 #make mapping that contains our basic sample info
-mapping_file <- unique(timecourse_noNA[,c("SampleID", "Nutrient", "Condition", "Timepoint")])
+mapping_file <- unique(growth_data[,c("SampleID", "Nutrient", "Condition")])
 
 #add a new column, where we list our experiment ID
 mapping_file$Comment <- "FirstExperiment"
@@ -1536,7 +1581,7 @@ Now we can use this mapping file and merge it with our growth data as follows:
 library(plyr)
 
 #merge our mapping file with our growth data
-new_data_frame <- merge(timecourse_noNA, mapping_file, by = "SampleID")
+new_data_frame <- merge(growth_data, mapping_file, by = "SampleID")
 
 #view data
 kable(head(new_data_frame), format='markdown')
@@ -1574,7 +1619,7 @@ To do this, we use these two lines of code:
 mapping_reduced <- mapping_file[,c("SampleID", "Comment")]
 
 #merge
-new_data_frame <- merge(timecourse_noNA, mapping_reduced, by = "SampleID")
+new_data_frame <- merge(growth_data, mapping_reduced, by = "SampleID")
 kable(head(new_data_frame), format='markdown')
 ```
 
@@ -1583,7 +1628,7 @@ Now, this worked fine but requires a bit more code and we need to create one mor
 We could also combine these two kines of code into one line by subsetting our mapping file INSIDE the merge function as follows:
 
 ```{r}
-new_data_frame <- merge(timecourse_noNA, mapping_file[,c("SampleID", "Comment")], by = "SampleID")
+new_data_frame <- merge(growth_data, mapping_file[,c("SampleID", "Comment")], by = "SampleID")
 kable(head(new_data_frame), format='markdown')
 ```
 
@@ -1596,21 +1641,21 @@ We can also add new columns into original table, i.e. if we want to not show the
 Below you can see that if we have numerical data in a column, we can use normal math operators (like +,-,/)
 
 ```{r}
-#convert cm to mm
-timecourse_noNA$Rootlength_mm <- timecourse_noNA$Rootlength*10
-kable(head(timecourse_noNA), format='markdown')
+#convert mg to g
+growth_data$FW_shoot_g <- growth_data$FW_shoot_mg/10
+kable(head(growth_data), format='markdown')
 
 #we can also round our data
-timecourse_noNA$Rootlength_mm <- round(timecourse_noNA$Rootlength*10, digits = 1)
-kable(head(timecourse_noNA), format='markdown')
+growth_data$FW_shoot_g <- round(growth_data$FW_shoot_mg/10, digits = 2)
+kable(head(growth_data), format='markdown')
 ```
 
 We can also add (or substract, etc ...) values from different columns. I.e. here we could calculate the ratios.
 
 ```{r}
 #we can also do math with the values in two columns, i.e. if we want to calculate the ration between root length and fresh weight
-timecourse_noNA$ratio <- timecourse_noNA$Rootlength/timecourse_noNA$Rootlength_mm
-kable(head(timecourse_noNA), format='markdown')
+growth_data$ratio <- growth_data$Rootlength/growth_data$FW_shoot_mg
+kable(head(growth_data), format='markdown')
 
 ```
 
@@ -1624,10 +1669,10 @@ Suppose now we want to estimate the mean root length for each growth condition. 
 
 ```{r}
 #index = factors we want to select
-tapply(X = timecourse_noNA$Rootlength, INDEX = timecourse_noNA$Nutrient, FUN = mean,na.rm = TRUE)
+tapply(X = growth_data$Rootlength, INDEX = growth_data$Nutrient, FUN = mean,na.rm = TRUE)
 
 #same but for two-way tables (this is not so useful here, but might be handy when you have different conditions for the same organism or a timecourse)
-tapply(timecourse_noNA$Rootlength, INDEX = list(timecourse_noNA$Nutrient, timecourse_noNA$Condition),FUN = mean, na.rm = TRUE)
+tapply(growth_data$Rootlength, INDEX = list(growth_data$Nutrient, growth_data$Condition),FUN = mean, na.rm = TRUE)
 ```
 
 
@@ -1839,6 +1884,8 @@ summary(aov)
 It can be seen that the two main effects (supp and dose) are statistically significant, as well as their interaction.
 
 **Note that, in the situation where the interaction is not significant you should use the additive model.**
+
+
 
 ## TUKEY
 ##########################
@@ -2056,17 +2103,136 @@ kable(growth_data) %>%
 ## Basic Plots
 ##########################
 
+### Example A: Growth data
+
 The examples below are part of base R, i.e. we can plot without using any packages.
 However, there are some nice packages that let you control a lot of parameters, which are good to learn for more sophisticates plots.
 
 Plotting in base R is simple, we just need to define, what we plot against the x- and y-axis.
 
 ```{r}
-x <- growth_data$Rootlength
-y <- growth_data$FW_shoot_mg
+
+# lets plot our root length against our shoot weight
+x <- growth_data$FW_shoot_mg
+y <- growth_data$Rootlength
 
 plot(x, y)
 ```
+
+Now, lets add some more axis labels to make it more informative and lets startt the plot at 0:
+
+```{r}
+
+# lets plot our root length against our shoot weight
+x <- growth_data$FW_shoot_mg
+y <- growth_data$Rootlength
+
+plot(x, y, xlab = "Shoot_weight_mg", ylab = "Rootlength_cm", ylim = c(0, 15), xlim = c(0, 50))
+```
+
+A useful thing to know is that you can add plots together, i.e. we can add a regression line:
+
+```{r}
+
+#lets do the stats running a linear model (lm)
+lm(growth_data$Rootlength ~ growth_data$FW_shoot_mg)
+
+```
+
+Here, the intercept is 5.2912 and the slope is 0.2465 .
+
+```{r}
+
+# lets plot our root length against our shoot weight
+x <- growth_data$FW_shoot_mg
+y <- growth_data$Rootlength
+
+#plot
+plot(x, y, xlab = "Shoot_weight_mg", ylab = "Rootlength_cm", ylim = c(0, 15), xlim = c(0, 50))
+
+#add the info from ln (both lines of code do the same thing)
+abline(lm(growth_data$Rootlength ~ growth_data$FW_shoot_mg))
+
+```
+
+We can even add the stats, but therefore we need to prepare the stats a bit better:
+
+```{r}
+
+#to stats
+modl = lm(growth_data$Rootlength ~ growth_data$FW_shoot_mg)
+
+#get summary
+modsum = summary(modl)
+
+#get R2
+r2 = modsum$adj.r.squared
+
+#look at the coefficients
+modsum$coefficients
+
+#get the p-value (its in the coefficient table, in the 2nd row and 4th column)
+my.p = modsum$coefficients[2,4]
+
+```
+
+Now we can plot this
+
+
+```{r}
+
+#add a label, in which we store the text we want to add
+mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))
+
+#plot
+plot(x, y, xlab = "Shoot_weight_mg", ylab = "Rootlength_cm", ylim = c(0, 15), xlim = c(0, 50))
+
+#add the info from ln (both lines of code do the same thing)
+abline(lm(growth_data$Rootlength ~ growth_data$FW_shoot_mg))
+
+#add the text
+text(x = 45, y =14, labels = mylabel)
+
+```
+
+If we want to add the other value, it gets a bit more complicated esp. if we want to have first the R2 and then, in a new line, the p-value.
+
+For this, lets first prepare a new label
+
+```{r}
+
+#make an empty vecotr
+rp = vector('expression',2)
+rp
+
+#add our two values into the vector
+rp[1] = substitute(expression(italic(R)^2 == MYVALUE), 
+		list(MYVALUE = format(r2,dig=3)))[2]
+
+rp[2] = substitute(expression(italic(p) == MYOTHERVALUE), 
+		list(MYOTHERVALUE = format(my.p, digits = 2)))[2]
+
+rp
+```
+
+Lets plot this:
+
+```{r}
+
+#plot
+plot(x, y, xlab = "Shoot_weight_mg", ylab = "Rootlength_cm", ylim = c(0, 15), xlim = c(0, 50))
+
+#add the info from ln (both lines of code do the same thing)
+abline(lm(growth_data$Rootlength ~ growth_data$FW_shoot_mg))
+
+#add the text as a legend and remove the border with bty
+legend("topright", legend = rp, bty = 'n')
+
+
+```
+
+
+### Example B: Time course data
 
 Now, lets work with our time course data to draw some line plots. I.e. lineplots are ideal if we have measurements over time. 
 
@@ -2088,7 +2254,6 @@ timecourse_summary_350 <- timecourse_summary[timecourse_summary$Condition == '35
 
 ```
 
-
 Useful comments:
 
 * type= It controls the type (p for points, l for lines, b for both,…).
@@ -2103,7 +2268,7 @@ Useful comments:
 x <- 0:5
 y <- timecourse_summary_Control$mean_root
 
-plot(x, y, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", main = "Growth measurements")
+plot(x, y, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)", col = "#7700BB", main = "Growth measurements")
 ```
 
 plot() always overwrites the content for the current graphics window. 
@@ -2126,8 +2291,12 @@ legend("topright", c("control", "microbe"), col = c("#7700BB", "#5555DD"),pch = 
 
 We can see nicely, that our roots grow longer past the 3rd timepoint.
 
-To change graphical parameters globally you can use par. R allows for n × m figures in a single page, by
-adjusting the parameter mfrow:
+### info on using par
+
+To change graphical parameters globally you can use par. R allows for n × m figures in a single page, by adjusting the parameter mfrow:
+
+- mfrow = c(3, 1) --> we have 3 plots distributed across 3 rows and one column
+- par(mai = c(2, 0.82, 0.82, 0.42)) --> sets the bottom, left, top and right margins respectively of the plot region in number of lines of text. If we change the margins it is recommended to reset them to the default after plotting with ``par(mai = c(1.02, 0.82, 0.82, 0.42))``. 
 
 ```{r,eval=F}
 par(mfrow = c(n, m)) # n: number of figures in rows, m: ... in columns.
@@ -2147,11 +2316,14 @@ the plotting device with dev.off(). Thus, you do not see the plot on the graphic
 package is supposed to be superior to these basic plotting functions, but it does not come with the base
 installation of R, therefore you will have to install it to try it out (if you are interested, or at a later time).
 
-### Exercise
+### Printing our results using par
 
-Now lets generate a png file plot.png containing three plots in three different rows, one with the
-NH3 levels of the different conditions, one with the control levels of the N_depleted and one with both.
-Respect the colours, and point shapes used previously. Add a legend, title, xlab and ylab to all plots.
+Now lets generate a png file plot.png containing three plots in three different rows.
+
+- The data for our control treatment
+- The data for our microbe treatment
+- The data combined in one plot
+
 
 ```{r, eval=F}
 
@@ -2159,45 +2331,38 @@ x <- 0:5
 control <- timecourse_summary_Control$mean_root
 Microbe <- timecourse_summary_350$mean_root
 
-
+#define what we want to print
 png("Output_examples/filename2.png", width = 240, height = 480)
+
+#define how we want to order our 3 plots into rows and columns
 par(mfrow = c(3, 1)) 
 
+#build plot1
 plot(x, control, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", main = "Growth measurements")
 
+#build plot2
 plot(x, Microbe, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#5555DD", main = "Growth measurements")
 
+#build plot3
 plot(x, control, type = "b", pch = 19, xlab = "Timepoints", ylab = "Rootlength (cm)",col = "#7700BB", ylim = c(0, 15), main = "Growth measurements")
 lines(x, Microbe, type = "b", col = "#5555DD")
 legend("topright", c("control", "microbe"), col = c("#7700BB", "#5555DD"),pch = c(19, 1))
 
+#closes the specified plot
 dev.off()
 
 ```
-
-### info on using par
-
-R makes it easy to combine multiple plots into one overall graph, using either the
-par( ) or layout( ) function.
-
-With the par( ) function, you can include the option mfrow=c(nrows, ncols) to create a matrix of nrows x ncols plots that are filled in by row. mfcol=c(nrows, ncols) fills in the matrix by columns.
-
-- mfrow = c(3, 1) --> we have 3 plots distributed across 3 rows and one column
-- par(mai = c(2, 0.82, 0.82, 0.42)) --> sets the bottom, left, top and right margins respectively of the plot region in number of lines of text. If we change the margins it is recommended to reset them to the default after plotting with ``par(mai = c(1.02, 0.82, 0.82, 0.42))``. An example is given below.
 
 
 
 ## Histograms
 ##########################
 
-A histogram shows the frequency of data values in equally sized intervals. This is one of the first plots you
-can make to learn about the distribution of your data. Density plots are an alternative, but because of the
+A histogram shows the frequency of data values in equally sized intervals. Density plots are an alternative, but because of the
 smoothing between data points, histograms provide a more ‘natural’ look at your data. If you are interested
 in how to make a density plot, look at the help page of density.
 
-### Exercise
-
-For example, we can plot the distribution of our root length measurements across our data.
+As an example, lets plot the distribution of our root length measurements across our data.
 
 ```{r}
 hist(growth_data[, "Rootlength"], cex = 0.6, main = "Data distribution", breaks = 10, density = 100, col = "lightblue", border = "darkblue", xlab = "Rootlength", labels =T)
@@ -2205,21 +2370,22 @@ hist(growth_data[, "Rootlength"], cex = 0.6, main = "Data distribution", breaks 
 
 ## Boxplots
 
-Boxplots represent a compact summary of a data vector in graphical form. As we’ve already seen above,
-the function summary returns summary statistics on the command line: the minimum, first quartile, mean,
-median, third quartile and the maximum. The boxplot displays these values graphically (except the mean).
-The thick line in the middle of the box represents the median, the lower bound of the box the first quartile and the upper bound the third quartile. Thus, 50% of the data are within the range of the box. The whiskers (thin lines below and above the box) represent the minimum and maximum. Points more extreme than the min. and max. are considered outliers and the help page describes how they are defined. While it is difficult to compare different distributions (e.g. data of different samples) with histograms, this can nicely be done with boxplots or density plots.
+Boxplots represent a compact summary of a data vector in graphical form. 
 
+As we’ve already seen above, the function summary returns summary statistics on the command line: the minimum, first quartile, mean,
+median, third quartile and the maximum. 
 
-### Exercise
+The boxplot displays these values graphically (except the mean) as follows:
+
+- the thick line in the middle of the box represents the median, 
+- the lower bound of the box the first quartile and the upper bound the third quartile. Thus, 50% of the data are within the range of the box. 
+- The whiskers (thin lines below and above the box) represent the minimum and maximum. 
+- Points more extreme than the min. and max. are considered outliers and the help page describes how they are defined. 
 
 We will first make a boxplot of all measurements and then check for differences between the two nutrient conditions.. Play around with the parameters and add colors and labels.
 
 
 ```{r}
-# separate the plotting window to contain 1 row and 2 columns
-par(mfrow = c(1, 3))
-par(mai = c(2, 0.82, 0.82, 0.42))
 
 # all data
 boxplot(growth_data$Rootlength, cex = 0.8,  ylab = "Root length (cm)")
@@ -2230,8 +2396,6 @@ boxplot(growth_data$Rootlength ~ growth_data$Nutrient, las = 2, cex = 0.8, ylab 
 # data by nutrient and growth condition
 boxplot(growth_data$Rootlength ~ growth_data$Nutrient * growth_data$Condition, las = 2, cex = 0.8, ylab = "Root length (cm)")
 
-# set the plotting parameters back to original values
-par(mai = c(1.02, 0.82, 0.82, 0.42))
 ```
 
 
@@ -2297,8 +2461,9 @@ myplot <-
   ggplot(growth_data, aes(x =Nutrient, y = Rootlength, fill = Nutrient)) +  
   geom_boxplot()  +                                 
   scale_fill_manual(values=c("black", "grey")) +                                          #add some other colors
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 15)) +                               #make the axis start at 0 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 16)) +                               #make the axis start at 0 
   theme_bw() +                                                                            #remove the grey background
+  ylab("Root length (cm)") +                                                              #change the label for the y-axis
   xlab("") +                                                                              #remove the label for the x axis
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),           #modify the grid lines
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
@@ -2314,7 +2479,7 @@ myplot
 By default most programs sort alpha in an alphabetical way. We can reorder this using vectors (which we can write ourselves or use a mapping file to create them)
 
 ```{r}
-#reorder the nutrient factors of our dataframe
+#reorder the nutrient levels in our factors
 growth_data$Nutrient2 <-  factor(growth_data$Nutrient, levels = c("P", "noP")) 
 
 #plot in our new order
@@ -2345,11 +2510,39 @@ pdf("Output_examples/Plot_root_length.pdf", width=3, height=3, family  = "Times"
 myplot_root
 dev.off()
 
-#we can also plot two graphs and print them in one pdf
+```
+
+### Combining and printing multiple plots
+
+The ggpubr package is nice to combine multiple plots onto one plot. 
+Some more information on this package can be found [here](https://rpkgs.datanovia.com/ggpubr/index.html)
+
+How it works:
+
+- First list the plots we want to print
+- the labels argument allows us to add labels
+- the ncol and nrow arguments allow us to control how many plots go into a row and a column
+
+```{r}
+
+#load package
+library(ggpubr)
+
+#view how ggarrange deals with two plots
 ggarrange(myplot_root, myplot_shoot, 
           labels = c("A", "B"),
           ncol = 2, nrow = 1)
+
+#we can also plot two graphs and print them in one pdf
+pdf("Output_examples/Two_plots.pdf", width=3, height=3, family  = "Times")
+ggarrange(myplot_root, myplot_shoot, 
+          labels = c("A", "B"),
+          ncol = 2, nrow = 1)
+dev.off()
+
 ```
+
+
 
 ### Sorting data v2
 
@@ -2398,7 +2591,7 @@ head(growth_data)
 
 ## Bargraphs with error bars
 
-For bargraphs we can also make them nice looking with errorbars, however, the values for the mean, sd and so one ideally should be in our table. 
+For bargraphs we can also make them nice looking with errorbars, however, the values for the mean, sd and so one ideally should be listed in a summary table. 
 
 Luckily we have learned before how we can use ddply to create such a table again and then blot it:
 
